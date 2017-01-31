@@ -1,0 +1,1 @@
+<p><?php _e('No results found', 'fundament'); ?></p>

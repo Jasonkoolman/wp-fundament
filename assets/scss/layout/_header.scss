@@ -1,0 +1,29 @@
+.site-header {
+    margin-bottom: 3rem;
+    padding: 1rem 0;
+    color: #FFF;
+    background-color: $color-primary;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+}
+.site-brand {
+    display: inline-block;
+    box-shadow: 0 2px 0 rgba(255, 255, 255, .25);
+}
+.site-nav {
+    display: inline-block;
+    float: right;
+
+    .menu {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+    }
+    .menu-item {
+        display: inline-block;
+        margin-left: 0.5rem;
+
+        a {
+            color: #FFF;
+        }
+    }
+}
