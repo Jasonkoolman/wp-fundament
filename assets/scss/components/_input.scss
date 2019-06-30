@@ -1,0 +1,182 @@
+.input {
+    display: block;
+    width: 100%;
+    margin: 0;
+    outline: 0;
+    padding: $input-padding;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $input-line-height;
+    color: $input-color;
+    background-color: $input-background;
+    border: $input-border-width solid $input-border-color;
+    border-radius: $input-border-radius;
+    transition: $input-transition;
+
+    &:hover {
+        color: $input-hover-color;
+        background-color: $input-hover-background;
+        border-color: $input-hover-border-color;
+    }
+    &:focus {
+        color: $input-focus-color;
+        background-color: $input-focus-background;
+        border-color: $input-focus-border-color;
+    }
+}
+
+// Size
+.input--sm {
+    padding: $input-padding-sm;
+    font-size: $font-size-sm;
+}
+.input--lg {
+    padding: $input-padding-lg;
+    font-size: $font-size-lg;
+}
+
+// Inline
+.input--inline {
+    display: inline-block;
+    width: auto;
+}
+
+// Grouped
+.input-group {
+    display: flex;
+    width: 100%;
+
+    > .input,
+    > .label,
+    > .btn {
+        border-radius: 0;
+
+        &:first-child {
+            border-radius: $input-border-radius 0 0 $input-border-radius;
+        }
+        &:last-child {
+            border-radius: 0 $input-border-radius $input-border-radius 0;
+        }
+        &:not(:first-child) {
+            margin-left: -$input-border-width; // overlap borders
+        }
+    }
+    > .input {
+        flex: 1;
+    }
+    > .label,
+    > .btn {
+        flex: 0 0 auto;
+    }
+    > .label {
+        padding: $input-padding;
+        border: $input-border-width solid $input-border-color;
+        font-size: 1rem;
+        line-height: $input-line-height;
+    }
+    > .input,
+    > .btn {
+        &:focus {
+            position: relative; // bring to foreground
+            z-index: 1;
+        }
+    }
+}
+.input-group--inline {
+    display: inline-flex;
+    width: auto;
+}
+
+// Checkboxes
+.input-check {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+
+    input, span {
+        vertical-align: middle;
+        margin-top: -0.125rem;
+        margin-right: 0.25rem;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// TODO: make customizable within theme.scss
+.input-check--custom {
+    position: relative;
+
+    &:hover span:after {
+        content: " ";
+        opacity: 1;
+        transform: scale(1);
+    }
+    input {
+        display: none;
+
+        &:checked + span:after {
+            content: " ";
+            opacity: 1;
+            transform: scale(1);
+            background-color: $color-primary;
+        }
+    }
+    input[type="radio"] + span {
+        &, &:after {
+            border-radius: 1em;
+        }
+    }
+    input[type="checkbox"] + span {
+        & {
+            border-radius: 0.125rem;
+        }
+        &:after {
+            border-radius: calc(0.125rem - 1px);
+        }
+    }
+    span {
+        display: inline-block;
+        padding: 0.5425rem;
+        pointer-events: none;
+        background-color: #FFF;
+        border: $input-border-width solid $input-border-color;
+
+        &:after {
+            content: " ";
+            display: block;
+            width: 0.5rem;
+            height: 0.5rem;
+            opacity: 0;
+            background-color: darken($input-border-color, 10%);
+            transform: scale(0);
+            transition: all 0.2s;
+        }
+    }
+}
+
+// Specific
+select.input,
+input[type="time"].input,
+input[type="date"].input,
+input[type="datetime"].input {
+    padding: calc(#{spacing($input-padding, y)} - 1px) calc(#{spacing($input-padding, x)} - 2px); // decrease padding
+}
+textarea.input {
+    resize: vertical;
+}
+
+// Placeholder
+::-webkit-input-placeholder {
+    color: $input-placeholder;
+}
+:-moz-placeholder {
+    color: $input-placeholder;
+}
+::-moz-placeholder {
+    color: $input-placeholder;
+}
+:-ms-input-placeholder {
+    color: $input-placeholder;
+}

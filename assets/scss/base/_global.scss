@@ -1,0 +1,28 @@
+:root {
+    --color-primary: $color-primary;
+    --color-base: $color-base;
+    --color-heading: $color-heading;
+    --color-positive: $color-positive;
+    --color-negative: $color-negative;
+    --color-warning: $color-warning;
+    --color-info: $color-info;
+
+    --font-family-base: inspect($font-family-base);
+    --font-family-heading: $font-family-heading;
+
+    @each $size, $breakpoint in $grid-breakpoints {
+        --breakpoint-#{$size}: $breakpoint;
+    }
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+    color: $color-base;
+}
+body {
+    background-color: $color-background;
+}

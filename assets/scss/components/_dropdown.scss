@@ -1,0 +1,116 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    user-select: none;
+
+    &:after {
+        content: " ";
+        display: inline-block;
+        margin-left: $dropdown-arrow-size;
+        margin-top: -($dropdown-arrow-size/2);
+        vertical-align: middle;
+        @include make-arrow(null, down, $dropdown-arrow-size);
+    }
+    .menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: $dropdown-min-width;
+        margin: $dropdown-margin;
+        z-index: $z-dropdown;
+        line-height: 1;
+        text-align: left;
+        white-space: nowrap;
+        background-color: $dropdown-background;
+        border: $dropdown-border-width solid $dropdown-border-color;
+        border-radius: $dropdown-border-radius;
+        box-shadow: $dropdown-box-shadow;
+    }
+    .menu__item {
+        display: block;
+        outline: 0;
+        padding: $dropdown-item-padding;
+        border-bottom: $dropdown-item-border-width solid $dropdown-item-border-color;
+
+        &:last-child {
+            border-bottom-width: 0;
+        }
+        &:hover {
+            background-color: $dropdown-hover-item-background;
+        }
+        &.is-active {
+            font-weight: bolder;
+            background-color: $dropdown-hover-item-background;
+        }
+    }
+
+    // Reversed (upward)
+    &.dropdown--reversed {
+        .menu {
+            top: auto;
+            bottom: 100%;
+        }
+        .menu__item:last-child {
+            border-bottom-width: $dropdown-item-border-width;
+        }
+    }
+}
+
+// Select input
+.dropdown--select {
+    @extend .input;
+
+    &:after { // dropdown arrow
+        position: absolute;
+        top: 50%;
+        right: spacing($input-padding, x) + 0.125rem;
+    }
+    > span { // input placeholder
+        pointer-events: none;
+    }
+    .menu {
+        left: -$input-border-width;
+        right: -$input-border-width;
+        max-height: 275px;
+        margin: 0;
+        overflow-y: auto;
+        border: $input-border-width solid $input-focus-border-color;
+        box-shadow: none;
+    }
+
+    // Default (downward)
+    &:not(.dropdown--reversed) {
+        .menu {
+            border-top-width: 0;
+            border-radius: 0 0 $input-border-radius $input-border-radius;
+        }
+        .menu__item:first-child {
+            border-top: $dropdown-item-border-width solid $dropdown-item-border-color;
+        }
+        &.is-open {
+            border-radius: $input-border-radius $input-border-radius 0 0;
+        }
+    }
+
+    // Reversed (upward)
+    &.dropdown--reversed {
+        .menu {
+            border-bottom-width: 0;
+            border-radius: $input-border-radius $input-border-radius 0 0;
+        }
+        .menu__item:last-child {
+            border-bottom-width: 1px;
+        }
+        &.is-open {
+            border-radius: 0 0 $input-border-radius $input-border-radius;
+        }
+    }
+
+    // Empty
+    &.is-empty > span {
+        color: $input-placeholder;
+    }
+}

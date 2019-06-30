@@ -1,10 +1,38 @@
-/**
- * Import any scss files here.
+/*!
+ * Fundament framework v0.4.0
+ *
+ * https://getfundament.com
+ *
+ * @author  Jason Koolman and The Fundament Authors
+ * @license MIT
  */
-@import "base/variables";
-@import "base/document";
+@import "base/normalize";
+@import "base/theme";
+@import "base/global";
+@import "base/typography";
+
+@import "utils/functions";
+@import "utils/mixins";
+@import "utils/helpers";
+
+@import "components/button";
+@import "components/card";
+@import "components/container";
+@import "components/dialog";
+@import "components/dropdown";
+@import "components/form";
+@import "components/grid";
+@import "components/input";
+@import "components/label";
+@import "components/list";
+@import "components/menu";
+@import "components/message";
+@import "components/popup";
+@import "components/table";
 
 @import "layout/global";
 @import "layout/header";
-@import "layout/sidebar";
+@import "layout/sections";
+@import "layout/pages";
 @import "layout/footer";
+@import "layout/woocommerce";

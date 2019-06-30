@@ -1,0 +1,56 @@
+.page-header {
+    margin-bottom: 1.25rem;
+}
+.page-title {
+    font-size: 1.25rem;
+    color: $color-base;
+
+    a {
+        color: inherit;
+    }
+}
+
+
+@include breakpoint-up(lg) {
+    .page-template-default {
+        .page-wrap {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .page-body {
+            flex: 1;
+            margin-right: 2rem;
+        }
+        .page-sidebar {
+            width: 300px;
+        }
+    }
+}
+
+
+// Homepage
+.feature {
+    text-align: center;
+
+    @include breakpoint-up(lg) {
+        padding: 0 1.25rem;
+    }
+
+    img {
+        margin-bottom: 1.25rem;
+    }
+    h4 {
+        text-transform: none;
+        font-size: 1.25rem;
+    }
+    p {
+        line-height: 1.75;
+        color: #666;
+    }
+
+    &:hover {
+        .material-icons {
+            color: $color-primary;
+        }
+    }
+}

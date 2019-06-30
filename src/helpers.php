@@ -58,3 +58,14 @@ function nav($location, $attributes = [])
         wp_nav_menu($attributes);
     }
 }
+
+/**
+ * Get the absolute URL to the WooCommerce pages.
+ *
+ * @param string $name
+ */
+function wc_permalink($name) {
+    $option = wc_get_page_id($name);
+
+    return get_permalink($option);
+}

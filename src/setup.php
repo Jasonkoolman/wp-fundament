@@ -8,7 +8,8 @@ add_action('after_setup_theme', function() {
 
     // Register menu's
     register_nav_menus([
-        'primary' => 'Primary Menu'
+        'primary' => 'Primary Menu',
+        'footer' => 'Footer Menu',
     ]);
 
     // Add theme support
@@ -25,4 +26,7 @@ add_action('after_setup_theme', function() {
     remove_action('wp_head', 'rsd_link');
     remove_action('wp_head', 'print_emoji_detection_script', 7);
     remove_action('wp_print_styles', 'print_emoji_styles');
+
+    // WooCommerce integration
+    require sprintf('%s/setup-woocommerce.php', __DIR__);
 });

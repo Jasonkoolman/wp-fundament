@@ -1,29 +1,61 @@
 .site-header {
-    margin-bottom: 3rem;
-    padding: 1rem 0;
-    color: #FFF;
-    background-color: $color-primary;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+    padding: 2.5rem 0;
+
+    .container {
+        display: flex;
+        align-items: center;
+    }
 }
+
 .site-brand {
-    display: inline-block;
-    box-shadow: 0 2px 0 rgba(255, 255, 255, .25);
+    transition: $transition-base;
+
+    img {
+        display: block;
+    }
+
+    &:hover {
+        transform: rotate(90deg);
+    }
 }
+
 .site-nav {
-    display: inline-block;
-    float: right;
+    flex: auto;
+    display: flex;
+    align-items: center;
 
     .menu {
         list-style: none;
-        margin: 0;
+        margin: 0 3rem 0 0;
         padding-left: 0;
     }
     .menu-item {
         display: inline-block;
-        margin-left: 0.5rem;
+        margin-left: 1.5rem;
 
         a {
-            color: #FFF;
+            color: #666;
+            font-size: 14px;
+            letter-spacing: 0.25px;
+            padding: 0.25rem;
+        }
+    }
+
+    .actions {
+        margin-left: auto;
+    }
+    .action {
+        display: inline-block;
+        margin-left: 1.25rem;
+
+        svg {
+            display: block;
+            fill: #666;
+            transition: $transition-base;
+
+            &:hover {
+                fill: $color-primary;
+            }
         }
     }
 }

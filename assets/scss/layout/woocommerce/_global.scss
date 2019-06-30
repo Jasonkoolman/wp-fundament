@@ -1,0 +1,73 @@
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px,1px,1px,1px);
+    overflow: hidden;
+    word-wrap: normal;
+}
+
+.woocommerce-page .site-main {
+    padding: 4rem 0;
+    background-color: $color-gray-lightest;
+}
+
+.shop_table, .shop_attributes {
+    @extend .table;
+}
+
+.woocommerce-message {
+    @extend .msg;
+    @extend .msg--positive;
+
+    .button {
+        @extend .btn--sm;
+        @extend .btn--flat;
+        font-size: 13px;
+        margin-right: 0.625rem;
+    }
+}
+
+.woocommerce-error {
+    @extend .msg;
+    @extend .msg--negative;
+    margin-top: 0;
+    list-style: none;
+
+    .button {
+        @extend .btn--sm;
+        @extend .btn--flat;
+        font-size: 13px;
+        margin-right: 0.625rem;
+    }
+}
+
+.woocommerce-info {
+    @extend .msg;
+    @extend .msg--info;
+}
+
+.woocommerce {
+    font-size: $font-size-base - 1px;
+
+    input, textarea {
+        @extend .input;
+    }
+    .button {
+        @extend .btn;
+        text-transform: none;
+    }
+    strong, label {
+        font-weight: $text-strong-weight;
+    }
+}
+
+.woocommerce-shipping-methods {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    label[for~='shipping_method_0_free_shipping1'] {
+        color: $color-primary;
+    }
+}

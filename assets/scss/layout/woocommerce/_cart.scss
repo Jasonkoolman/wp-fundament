@@ -1,0 +1,134 @@
+.woocommerce-cart {
+
+    .page-wrap {
+        animation: fadeInCart 1000ms ease;
+    }
+    .woocommerce {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .shop_table {
+        border: 0;
+
+        td, th {
+            border-bottom: 0;
+        }
+    }
+}
+
+@keyframes fadeInCart {
+    0%, 10% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.woocommerce-notices-wrapper {
+    width: 100%;
+}
+
+.woocommerce-cart-form {
+    flex: 1;
+    margin-bottom: 1rem;
+    background-color: #FFF;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+    @include breakpoint-up(md) {
+        margin-right: 2rem;
+        padding: 0.75rem;
+    }
+
+    table {
+        border: 0;
+        margin-bottom: 0;
+    }
+    thead {
+        display: none;
+    }
+    td, th {
+        border-bottom: 0;
+        vertical-align: middle;
+    }
+
+    .product-remove {
+        text-align: center;
+        font-weight: $text-strong-weight;
+
+        a {
+            font-size: 1.125rem;
+            color: $color-gray-dark;
+            padding: 0 4px;
+
+            &:hover {
+                color: $color-negative;
+            }
+        }
+    }
+    .product-name {
+        font-weight: $text-strong-weight;
+        a {
+            color: $color-base;
+        }
+    }
+    .product-price {
+        color: $color-gray-dark;
+    }
+    .product-thumbnail img {
+        display: block;
+        max-width: 60px;
+        height: auto;
+        border-radius: $border-radius-base;
+    }
+
+    .button {
+        @extend .btn--sm;
+        @extend .btn--flat;
+        font-size: 13px;
+        float: right;
+    }
+    input {
+        @extend .input--sm;
+        width: 8rem;
+        float: left;
+        font-size: 13px;
+        margin-right: 0.625rem;
+    }
+
+    .coupon {
+        label {
+            display: none;
+        }
+        .button {
+            float: left;
+        }
+    }
+
+}
+
+.woocommerce .cart_totals {
+    max-width: 340px;
+    float: right;
+
+    h2 {
+        display: none;
+    }
+    th {
+        font-weight: 400;
+    }
+    input {
+        @extend .input--sm;
+    }
+    .checkout-button {
+        @extend .btn--primary;
+    }
+}
+
+.woocommerce-shipping-destination {
+    font-size: 0.8em;
+    color: $color-gray-darker;
+}

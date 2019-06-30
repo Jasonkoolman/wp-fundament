@@ -4,25 +4,29 @@
 
         <div class="page-wrap">
 
-            <?php while ( have_posts() ): the_post(); ?>
+            <div class="page-body">
 
-                <header class="page-header">
-                    <h1 class="page-title">
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                    </h1>
-                </header>
+                <?php while ( have_posts() ): the_post(); ?>
 
-                <div class="page-content">
-                    <?php the_content(); ?>
-                </div>
+                    <header class="page-header">
+                        <h1 class="page-title">
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        </h1>
+                    </header>
 
-                <?php wp_link_pages(); ?>
+                    <div class="page-content">
+                        <?php the_content(); ?>
+                    </div>
 
-            <?php endwhile; ?>
+                    <?php wp_link_pages(); ?>
+
+                <?php endwhile; ?>
+
+            </div>
+
+            <?php get_sidebar(); ?>
 
         </div>
-
-        <?php get_sidebar(); ?>
 
     </div>
 

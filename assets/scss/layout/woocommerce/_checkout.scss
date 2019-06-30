@@ -1,0 +1,88 @@
+.woocommerce-checkout {
+
+    .col2-set {
+        background-color: #FFF;
+        padding: 1.5rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,.15);
+        margin-bottom: 1rem;
+        border-radius: 3px;
+        @extend .clear;
+    }
+
+    form {
+        input, select, textarea {
+            font-size: 15px;
+        }
+        .required {
+            border: 0;
+            color: $color-negative;
+            font-weight: 500;
+            text-decoration: none;
+        }
+    }
+
+    @include breakpoint-up(md) {
+        .col-1 {
+            float: left;
+            width: 48%;
+        }
+        .col-2 {
+            float: right;
+            width: 48%;
+        }
+    }
+
+}
+
+.woocommerce-billing-fields {
+    h3 {
+        font-size: 1rem;
+        color: $color-primary;
+        margin-bottom: 1rem;
+        text-transform: none
+    }
+}
+
+#ship-to-different-address {
+    margin-top: 3.75rem;
+
+    input {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+        margin-right: 0.25rem;
+    }
+    span {
+        font-family: $font-family-base;
+        font-size: 15px;
+        text-transform: none;
+        font-weight: 400;
+    }
+}
+.shipping_address {
+    display: none;
+    padding: 1rem 1rem 0.25rem;
+    margin-bottom: 1rem;
+    background: darken($color-gray-lightest, 2%);
+    border-radius: $border-radius-base;
+    @extend .clear;
+}
+
+#billing_first_name_field,
+#billing_postcode_field,
+#shipping_first_name_field,
+#shipping_postcode_field {
+    float: left;
+    width: 47%;
+}
+#billing_last_name_field,
+#billing_city_field,
+#shipping_last_name_field,
+#shipping_city_field {
+    float: right;
+    width: 47%;
+}
+#billing_country_field,
+#shipping_country_field {
+    display: none;
+}

@@ -1,0 +1,161 @@
+.btn {
+    display: inline-block;
+    padding: $button-padding;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    line-height: $button-line-height;
+    font-weight: $button-font-weight;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    outline: 0;
+    border: $button-border-width solid transparent;
+    border-radius: $button-border-radius;
+    transition: $button-transition;
+    @include make-button($button-color, $button-background);
+
+    &:disabled,
+    &.btn--disabled {
+        opacity: 0.6;
+        pointer-events: none;
+    }
+}
+
+// Variations
+.btn--primary {
+    @include make-button(#FFF, $color-primary);
+}
+.btn--base {
+    @include make-button(#FFF, $color-inverse);
+}
+.btn--positive {
+    @include make-button(#FFF, $color-positive);
+}
+.btn--hollow-base {
+    color: $color-base;
+    border-color: $color-base;
+    background-color: transparent;
+
+    &:focus,
+    &:hover {
+        color: darken($color-base, 20%);
+        border-color: darken($color-base, 20%);
+        background-color: transparent;
+    }
+    &:active {
+        color: darken($color-base, 40%);
+        border-color: darken($color-base, 40%);
+    }
+}
+.btn--hollow-light {
+    color: lighten($color-base, 20%);
+    border-color: $color-gray-light;
+    background-color: #FFF;
+    box-shadow: 0 2px 4px -2px rgba(0,0,0,0.1);
+
+    &:focus,
+    &:hover {
+        color: $color-base;
+        border-color: darken($color-gray-light, 7%);
+        background-color: #FFF;
+        box-shadow: 0 3px 5px -2px rgba(0,0,0,0.15);
+    }
+    &:active {
+        color: darken($color-base, 20%);
+        border-color: darken($color-gray-light, 14%);
+        box-shadow: 0 2px 4px -2px rgba(0,0,0,0.1);
+        background-color: #FFF;
+    }
+}
+.btn--hollow-inverse {
+    color: #FFF;
+    border-color: #FFF;
+    background-color: transparent;
+
+    &:focus,
+    &:hover {
+        color: darken(#FFF, 20%);
+        border-color: darken(#FFF, 20%);
+        background-color: transparent;
+    }
+    &:active {
+        color: darken(#FFF, 40%);
+        border-color: darken(#FFF, 40%);
+    }
+}
+.btn--flat {
+    color: lighten($color-base, 20%);
+    border-color: $color-gray-light;
+    background: linear-gradient(to top, #F8F8F8, #FFF);;
+
+    &:focus,
+    &:hover {
+        color: $color-base;
+        border-color: darken($color-gray-light, 7%);
+        background: linear-gradient(to top, #F8F8F8, #FFF);
+    }
+    &:active {
+        color: darken($color-base, 20%);
+        border-color: darken($color-gray-light, 14%);
+    }
+}
+
+// Sizes
+.btn--sm {
+    padding: $button-padding-sm;
+    font-size: $font-size-sm;
+}
+.btn--lg {
+    padding: $button-padding-lg;
+    font-size: $font-size-lg;
+}
+.btn--fluid {
+    display: block;
+    width: 100%;
+}
+
+// Icon
+.btn--icon .icon {
+    margin-right: 0.5rem;
+    line-height: 1;
+
+    &.icon--right {
+        margin-right: 0;
+        margin-left: 0.5rem;
+    }
+}
+
+// Grouped
+.btn-group {
+    display: inline-flex;
+
+    > .btn {
+        border-radius: 0;
+
+        &:first-child {
+            border-radius: $button-border-radius 0 0 $button-border-radius;
+        }
+        &:last-child {
+            border-radius: 0 $button-border-radius $button-border-radius 0;
+        }
+        &:not(:first-child) {
+            margin-left: -$button-border-width; // overlap borders
+        }
+        &:hover, &:focus {
+            position: relative; // bring to foreground
+            z-index: 1;
+        }
+    }
+}
+.btn-group--fluid {
+    display: flex;
+    width: 100%;
+
+    > .btn {
+        flex: 1;
+    }
+}

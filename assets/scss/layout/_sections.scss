@@ -1,0 +1,117 @@
+.app-section {
+    position: relative;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    overflow: hidden;
+
+    @include breakpoint-up(md) {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+    @include breakpoint-up(xl) {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+}
+.app-section--inverted {
+    color: #FFF;
+}
+.app-section--gray {
+    background-color: #FAFAFA;
+}
+
+.app-section-banner {
+    min-height: 740px;
+    padding: 4rem 5rem;
+    text-align: left;
+    overflow: visible;
+
+    .honeycombs {
+        position: absolute;
+        right: 4rem;
+        z-index: 1;
+        bottom: -3rem;
+        transform: rotate(30deg);
+
+        .hex {
+            transition: all 500ms ease;
+        }
+
+        // purple #800080
+
+        &.style-1 {
+            .hex:nth-child(1) {
+                fill: #43A047;
+            }
+            .hex:nth-child(2) {
+                fill: #009688;
+            }
+            .hex:nth-child(3) {
+                fill: #385063;
+            }
+            .hex:nth-child(4) {
+                fill: #43A047;
+            }
+            .hex:nth-child(5) {
+                fill: #009688;
+            }
+            .hex:nth-child(6) {
+                fill:  #385063;
+            }
+            .hex:nth-child(7) {
+                fill: #009688;
+            }
+        }
+    }
+    .app-section-bg {
+        background: url('../img/banner-hero.jpg') no-repeat center;
+    }
+    .app-section-body {
+        max-width: 500px;
+        text-align: left;
+        margin: 0;
+    }
+}
+
+.app-section-body {
+    position: relative;
+    max-width: 420px;
+    line-height: 1.75;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 1px;
+    z-index: 10;
+
+    h1, h2, h3 {
+        line-height: 1.5;
+    }
+    .btn {
+        margin-top: 0.5rem;
+    }
+}
+
+.app-section-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 1280px;
+    transform: translate(-50%, -50%);
+    background-position: center;
+    background-size: cover;
+}
+
+.app-section-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 1280px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.3);
+    z-index: 1;
+}

@@ -1,0 +1,95 @@
+// Media queries
+@mixin breakpoint-up($size) {
+    @media (min-width: map-get($grid-breakpoints, $size)) {
+        @content;
+    }
+}
+@mixin breakpoint-down($size) {
+    @media (max-width: map-get($grid-breakpoints, $size) - 1px) {
+        @content;
+    }
+}
+@mixin breakpoint-only($size) {
+    @include breakpoint-up($size) {
+        @include breakpoint-down($size) {
+            @content;
+        }
+    }
+}
+
+// Grid
+@mixin make-row() {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -($grid-gutter-width/2);
+    margin-right: -($grid-gutter-width/2);
+    justify-content: flex-start;
+}
+@mixin make-column-base() {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: $grid-gutter-width/2;
+    padding-right: $grid-gutter-width/2;
+}
+@mixin make-column($breakpoint, $size, $columns: $grid-columns) {
+    @include breakpoint-up($breakpoint) {
+        width: percentage($size / $columns);
+    }
+}
+
+// Button
+@mixin make-button($color, $background-color, $border-color: null, $increments: 5%, $hollow: false) {
+    border-color: $border-color;
+    color: $color;
+    background-color: $background-color;
+
+    &:focus,
+    &:hover {
+        border-color: $border-color and darken($border-color, $increments);
+        color: if($hollow, darken($color, $increments), $color);
+        background-color: $background-color and darken($background-color, $increments);
+    }
+    &:active {
+        border-color: $border-color and darken($border-color, $increments*2);
+        color: if($hollow, darken($color, $increments*2), $color);
+        background-color: $background-color and darken($background-color, $increments*2);
+    }
+}
+@mixin make-hollow-button($color, $border-color: $color, $background-color: null) {
+    @include make-button($color, $background-color, $border-color, 7%, true);
+}
+
+// Card
+@mixin make-card($color, $background-color, $border-color: null) {
+    border-color: $border-color;
+    color: $color;
+    background-color: $background-color;
+}
+
+// Arrow
+@mixin make-arrow($color, $direction, $size, $tip-size: $size) {
+    @content;
+
+    @if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $tip-size solid;
+        border-bottom-color: $color; // allow passing null without removing the tip
+    } @else if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $tip-size solid;
+        border-top-color: $color;
+    } @else if $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $tip-size solid;
+        border-right-color: $color;
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $tip-size solid;
+        border-left-color: $color;
+    }
+}

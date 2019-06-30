@@ -1,0 +1,95 @@
+// Textual
+.text-primary  { color: $color-primary; }
+.text-positive { color: $color-positive; }
+.text-warning  { color: $color-warning; }
+.text-negative { color: $color-negative; }
+.text-muted    { color: $color-gray-dark; }
+
+@each $size, $breakpoint in $grid-breakpoints {
+    @include breakpoint-up($size) {
+
+        @each $align in (left, center, right) {
+            $name: if($size == xs, $align, #{$size}-#{$align}); // xs shorthand
+
+            .text-#{$name} {
+                text-align: $align!important;
+            }
+        }
+
+    }
+}
+
+// Backgrounds
+.bg-primary  { background-color: $color-primary; color: #FFF; }
+.bg-positive { background-color: $color-positive; color: #FFF; }
+.bg-warning  { background-color: $color-warning; color: #FFF; }
+.bg-negative { background-color: $color-negative; color: #FFF; }
+.bg-inverse  { background-color: $color-inverse; color: #FFF; }
+
+// Images
+.img-auto {
+    max-width: 100%;
+    height: auto;
+}
+.img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+// Block elements
+.block-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Spacing
+@each $size, $breakpoint in $grid-breakpoints {
+    @include breakpoint-up($size) {
+
+        @each $dir, $abbr in (top: t, right: r, bottom: b, left: l) {
+            @each $i, $spacing in $spacings-base {
+                $name: if($size == xs, #{$abbr}-#{$i}, #{$abbr}-#{$size}-#{$i}); // xs shorthand
+
+                .m#{$name} { // margin
+                    margin-#{$dir}: $spacing!important;
+                }
+                .p#{$name} { // padding
+                    padding-#{$dir}: $spacing!important;
+                }
+            }
+        }
+
+    }
+}
+
+// Visibility
+@each $size, $breakpoint in $grid-breakpoints {
+    @if $breakpoint > 0 {
+        @include breakpoint-down($size) {
+            .hide-#{$size}-down {
+                display: none!important;
+            }
+        }
+        @include breakpoint-up($size) {
+            .hide-#{$size}-up {
+                display: none!important;
+            }
+        }
+    }
+}
+
+// Clearfix
+.clear:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+// Screen readers
+.sr-content {
+    position: absolute!important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}

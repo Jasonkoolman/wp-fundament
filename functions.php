@@ -11,13 +11,7 @@ spl_autoload_register(function($class) {
 });
 
 // Include scripts
-$includes = [
-	'setup',
-	'actions',
-    'widgets',
-    'post-types',
-    'helpers'
-];
+$includes = ['setup', 'actions', 'widgets', 'post-types', 'helpers'];
 
 foreach ($includes as $include) {
     require sprintf('%s/src/%s.php', __DIR__, $include);
