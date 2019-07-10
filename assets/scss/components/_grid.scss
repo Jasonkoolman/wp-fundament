@@ -22,12 +22,12 @@
     }
 }
 .row--relaxed {
-    margin-left: -($grid-gutter-width*0.75);
-    margin-right: -($grid-gutter-width*0.75);
+    margin-left: -($grid-gutter-width);
+    margin-right: -($grid-gutter-width);
 
     > .col {
-        padding-left: $grid-gutter-width*0.75;
-        padding-right: $grid-gutter-width*0.75;
+        padding-left: $grid-gutter-width;
+        padding-right: $grid-gutter-width;
     }
 }
 

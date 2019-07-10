@@ -1,5 +1,26 @@
 .site-footer {
-    margin-top: 5rem;
-    padding: 3rem 0;
-    background-color: #FAFAFA;
+    padding: 5rem 0;
+    font-family: $font-family-heading;
+    background-color: #222;
+    font-size: 0.875rem;
+    text-align: center;
+
+    .menu {
+        display: block;
+        margin: 1.25rem auto 0
+    }
+    .menu-item {
+        display: inline-block;
+        margin-right: 1rem;
+
+        a {
+            padding: 2px 4px;
+            color: rgba(255,255,255,0.6);
+            transition: $transition-base;
+
+            &:hover {
+                color: #FFF;
+            }
+        }
+    }
 }

@@ -1,8 +1,20 @@
 <?php get_header(); ?>
 
-    <div class="container">
+    <header class="page-header">
+        <h1 class="page-title"><?php the_title() ?></h1>
+    </header>
 
-        <?php woocommerce_content() ?>
+    <div class="page-wrap">
+
+        <div class="container">
+
+            <div class="page-body">
+
+                <?php woocommerce_content() ?>
+
+            </div>
+
+        </div>
 
     </div>
 

@@ -21,6 +21,36 @@ add_filter('woocommerce_enqueue_styles', function($styles) {
 });
 
 /**
- * Shift the checkout order
+ * Optimize template structure
  */
-remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+
+// Wrap checkout columns
+add_action( 'woocommerce_checkout_before_customer_details', function() {
+    echo '<div class="checkout-column-one">';
+});
+add_action( 'woocommerce_checkout_before_order_review_heading', function() {
+    echo '<div class="checkout-column-two">';
+});
+add_action( 'woocommerce_checkout_after_customer_details', 'close_div');
+add_action( 'woocommerce_checkout_after_order_review', 'close_div');
+
+function close_div() {
+    echo '</div>';
+}
+
+// Move coupon form below the checkout form
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+add_action( 'woocommerce_after_checkout_form', 'woocommerce_checkout_coupon_form', 5 );
+
+// Product thumbnail in checkout
+add_filter( 'woocommerce_cart_item_name', 'add_checkout_product_thumbnail', 20, 3 );
+
+function add_checkout_product_thumbnail( $product_name, $cart_item, $cart_item_key ){
+    if ( is_checkout() ) {
+        $thumbnail  = $cart_item['data']->get_image([32, 32]);
+        $product_html = '<div class="product-item-thumbnail">'.$thumbnail.'</div> ';
+        $product_name = $product_html . $product_name;
+    }
+    return $product_name;
+}

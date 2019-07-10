@@ -2,12 +2,14 @@
     width: 45%;
     float: left;
 
+    figure {
+        margin: 0;
+    }
     img {
         max-width: 100%;
         height: auto;
     }
 }
-
 
 .single-product .product {
     .product_meta {
@@ -17,14 +19,13 @@
         font-size: 2rem;
     }
     .summary {
-        width: 55%;
+        width: 45%;
         float: right;
-        padding: 1.75rem;
-        background: $color-gray-lightest;
 
         .price {
-            font-size: 1.625rem;
-            font-weight: 300;
+            font-family: $font-family-heading;
+            font-size: 1.875rem;
+            font-weight: 500;
         }
     }
     .variations {
@@ -68,9 +69,8 @@
 }
 
 .woocommerce-tabs {
-    width: 55%;
-    float: right;
-    padding: 1.5rem 2rem;
+    padding-top: 2rem;
+    clear: both;
 
     .tabs {
         list-style: none;

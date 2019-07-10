@@ -7,13 +7,19 @@
     word-wrap: normal;
 }
 
-.woocommerce-page .site-main {
-    padding: 4rem 0;
+.woocommerce-page .site-header {
     background-color: $color-gray-lightest;
 }
 
 .shop_table, .shop_attributes {
     @extend .table;
+
+    td:first-child, th:first-child {
+        padding-left: 0;
+    }
+    td:last-child, th:last-child {
+        padding-right: 0;
+    }
 }
 
 .woocommerce-message {
@@ -50,8 +56,11 @@
 .woocommerce {
     font-size: $font-size-base - 1px;
 
-    input, textarea {
+    .input-text {
         @extend .input;
+    }
+    .input-radio {
+        @extend .input-check;
     }
     .button {
         @extend .btn;
@@ -70,4 +79,8 @@
     label[for~='shipping_method_0_free_shipping1'] {
         color: $color-primary;
     }
+}
+
+.woocommerce-Price-currencySymbol {
+    margin-right: 0.25em;
 }

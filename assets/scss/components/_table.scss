@@ -3,22 +3,18 @@
     margin-bottom: $table-margin-bottom;
     text-align: left;
     border-radius: 5px;
-    border-collapse: separate;
-    border: $table-border-width solid $table-border-color;
+    border-collapse: collapse;
 
+    tr {
+        border-bottom: $table-border-width solid $table-border-color;
+    }
     th {
         font-weight: 500;
     }
     th,
     td {
         padding: $table-col-padding;
-        border-bottom: $table-border-width solid $table-border-color;
         vertical-align: top;
-    }
-    tr:last-child {
-        td, th {
-            border-bottom: 0;
-        }
     }
 }
 

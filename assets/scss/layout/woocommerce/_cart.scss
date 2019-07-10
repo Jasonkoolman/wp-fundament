@@ -1,18 +1,12 @@
 .woocommerce-cart {
-
-    .page-wrap {
+    .page-body {
+        max-width: 800px;
+        margin: 0 auto;
         animation: fadeInCart 1000ms ease;
     }
-    .woocommerce {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .shop_table {
-        border: 0;
 
-        td, th {
-            border-bottom: 0;
-        }
+    .shop_table tr {
+        border-bottom: 0;
     }
 }
 
@@ -32,26 +26,19 @@
 }
 
 .woocommerce-cart-form {
-    flex: 1;
-    margin-bottom: 1rem;
-    background-color: #FFF;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-
-    @include breakpoint-up(md) {
-        margin-right: 2rem;
-        padding: 0.75rem;
-    }
-
     table {
+        font-family: $font-family-heading;
+        font-weight: 500;
         border: 0;
         margin-bottom: 0;
     }
     thead {
         display: none;
     }
+    tr.cart_item {
+        border-bottom: $table-border-width solid $table-border-color;
+    }
     td, th {
-        border-bottom: 0;
         vertical-align: middle;
     }
 
@@ -80,7 +67,7 @@
     }
     .product-thumbnail img {
         display: block;
-        max-width: 60px;
+        max-width: 80px;
         height: auto;
         border-radius: $border-radius-base;
     }
@@ -90,28 +77,28 @@
         @extend .btn--flat;
         font-size: 13px;
         float: right;
+
+        &:disabled {
+            opacity :0;
+        }
     }
     input {
-        @extend .input--sm;
-        width: 8rem;
+        font-size: 15px;
+        min-width: 3rem;
+        max-width: 8rem;
         float: left;
-        font-size: 13px;
         margin-right: 0.625rem;
     }
 
     .coupon {
-        label {
-            display: none;
-        }
-        .button {
-            float: left;
-        }
+        display: none;
     }
 
 }
 
 .woocommerce .cart_totals {
-    max-width: 340px;
+    text-align: right;
+    max-width: 330px;
     float: right;
 
     h2 {
@@ -120,11 +107,24 @@
     th {
         font-weight: 400;
     }
+    td, th {
+        border-bottom: 0;
+    }
     input {
         @extend .input--sm;
     }
     .checkout-button {
         @extend .btn--primary;
+    }
+    .order-total {
+        display: none;
+    }
+
+    .woocommerce-Price-amount {
+        font-family: 'Montserrat';
+        font-size: 1.5rem;
+        line-height: 1.25;
+        font-weight: 700;
     }
 }
 

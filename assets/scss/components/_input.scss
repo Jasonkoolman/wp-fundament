@@ -89,16 +89,12 @@
 
 // Checkboxes
 .input-check {
-    display: block;
-    font-size: 1rem;
-    font-weight: 400;
+    display: inline-block;
     cursor: pointer;
+    vertical-align: middle;
+    margin-top: -0.25rem;
+    margin-right: 0.25rem;
 
-    input, span {
-        vertical-align: middle;
-        margin-top: -0.125rem;
-        margin-right: 0.25rem;
-    }
     &:last-child {
         margin-bottom: 0;
     }

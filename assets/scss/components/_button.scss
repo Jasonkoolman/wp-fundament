@@ -1,14 +1,12 @@
 .btn {
     display: inline-block;
     padding: $button-padding;
-    font-family: $font-family-base;
+    font-family: $font-family-heading;
     font-size: $font-size-sm;
     line-height: $button-line-height;
     font-weight: $button-font-weight;
     text-align: center;
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
     vertical-align: middle;
     cursor: pointer;
     user-select: none;
@@ -22,6 +20,22 @@
     &.btn--disabled {
         opacity: 0.6;
         pointer-events: none;
+    }
+}
+
+.btn--link {
+    padding: 2px;
+    border: 0;
+    color: $color-primary;
+    background-color: transparent;
+
+    &:focus,
+    &:hover,
+    &:active {
+        background-color: transparent;
+    }
+    &:after {
+        content: "→";
     }
 }
 
@@ -107,11 +121,11 @@
 // Sizes
 .btn--sm {
     padding: $button-padding-sm;
-    font-size: $font-size-sm;
+    font-size: $button-font-size-sm;
 }
 .btn--lg {
     padding: $button-padding-lg;
-    font-size: $font-size-lg;
+    font-size: $button-font-size-lg;
 }
 .btn--fluid {
     display: block;

@@ -1,4 +1,5 @@
 .site-header {
+    background-color: $color-gray-lightest;
     padding: 2.5rem 0;
 
     .container {
@@ -32,12 +33,19 @@
     .menu-item {
         display: inline-block;
         margin-left: 1.5rem;
+        font-family: $font-family-heading;
+        font-size: 0.8125rem;
+        color: $color-base;
+        text-transform: uppercase;
+        transition: $transition-base;
 
         a {
-            color: #666;
-            font-size: 14px;
-            letter-spacing: 0.25px;
+            color: inherit;
             padding: 0.25rem;
+        }
+
+        &:hover {
+            color: $color-primary;
         }
     }
 
@@ -46,7 +54,7 @@
     }
     .action {
         display: inline-block;
-        margin-left: 1.25rem;
+        margin-left: 1rem;
 
         svg {
             display: block;

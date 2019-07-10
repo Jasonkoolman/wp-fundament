@@ -1,14 +1,14 @@
 /**
- * The default Fundament theme.
+ * Fundament theme.
  *
- * Override these variables to make it yours.
+ * @author Jason Koolman
  */
- @import url('https://fonts.googleapis.com/css?family=Montserrat:700|Roboto:300,400,500&display=swap');
+ @import url('https://fonts.googleapis.com/css?family=Montserrat:500,700|Raleway:400,500&display=swap');
 
 /*---------------------*
  * Colors
  *---------------------*/
-$color-primary:    #d81b60  !default; //#D12660
+$color-primary:    #009660  !default; //#D12660 //#673ab7 //#d81b60
 $color-base:       #222     !default;
 $color-heading:    inherit  !default;
 $color-inverse:    #333     !default;
@@ -19,33 +19,35 @@ $color-warning:  #FFA000    !default;
 $color-negative: #D84315    !default;
 $color-info:     #0288D1    !default;
 
-$color-gray-darkest:  #444      !default;
+$color-gray-darkest:  #4B4B4B   !default;
 $color-gray-darker:   #666      !default;
 $color-gray-dark:     #888      !default;
 $color-gray:          #AAA      !default;
 $color-gray-light:    #DDD      !default;
-$color-gray-lighter:  #E8E8E8   !default;
-$color-gray-lightest: #F9F9F9   !default;
+$color-gray-lighter:  #E9E9E9   !default;
+$color-gray-lightest: #F8F8F8   !default;
 
 /*---------------------*
  * Typography
  *---------------------*/
-$font-size-base: 16px       !default;
-$font-size-sm:   0.875rem   !default;
-$font-size-lg:   1.25rem    !default;
+$font-size-base: 16px;
+$font-size-xs:   0.8125rem;
+$font-size-sm:   0.875rem;
+$font-size-lg:   1.125rem;
 
-$font-family-base:    'Roboto', Arial, Helevetica, sans-serif !default;
+
+$font-family-base:    'Raleway', Arial, Helevetica, sans-serif !default;
 $font-family-heading: 'Montserrat', $font-family-base !default;
 $font-sizes-heading:  (
-    h1: 2.5rem, // 42px
-    h2: 2rem,  // 36px
-    h3: 1.5rem, // 30px
-    h4: 1.25rem,   // 24px
+    h1: 2.625rem, // 42px
+    h2: 2rem,     // 36px
+    h3: 1.5rem,   // 30px
+    h4: 1.25rem,  // 24px
     h5: 1.25rem,  // 20px
     h6: 1rem,     // 16px
 ) !default;
 
-$line-height-base: 1.5 !default;
+$line-height-base: 1.6;
 
 // Links
 $link-color:            $color-primary              !default;
@@ -63,17 +65,19 @@ $grid-breakpoints:  (
     sm: 570px,
     md: 768px,
     lg: 992px,
-    xl: 1200px
+    xl: 1200px,
+    xxl: 1400px
 ) !default;
 
 /*---------------------*
  * Container
  *---------------------*/
 $container-widths: (
-    sm: 540px,
+    sm: 570px,
     md: 720px,
     lg: 940px,
-    xl: 1140px
+    xl: 1140px,
+    xxl: 1200px
 ) !default;
 
 /*---------------------*
@@ -98,7 +102,7 @@ $z-dialog:   1000   !default;
 /*---------------------*
  * Input
  *---------------------*/
-$input-padding:       0.5625rem 0.8125rem   !default;
+$input-padding:       0.625rem 0.875rem   !default;
 $input-line-height:   1.25                  !default;
 $input-color:         $color-base           !default;
 $input-placeholder:   $color-gray           !default;
@@ -146,7 +150,7 @@ $list-item-background:   transparent            !default;
 /*---------------------*
  * Button
  *---------------------*/
-$button-padding:       0.5625rem 1.125rem   !default;
+$button-padding:       0.625rem 1.25rem   !default;
 $button-line-height:   1.25                 !default;
 $button-font-weight:   500                  !default;
 $button-color:         $color-base          !default;
@@ -156,8 +160,10 @@ $button-border-radius: $border-radius-base  !default;
 $button-transition:    $transition-base     !default;
 
 // Sizes
-$button-padding-sm: 0.375rem 0.6875rem  !default;
-$button-padding-lg: 0.8125rem 1.5rem    !default;
+$button-padding-sm:    0.375rem 0.6875rem;
+$button-font-size-sm:  0.75rem;
+$button-padding-lg:    0.8125rem 1.5rem;
+$button-font-size-lg:  1rem;
 
 /*---------------------*
  * Table

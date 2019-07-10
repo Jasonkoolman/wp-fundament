@@ -1,42 +1,50 @@
-<svg width="364" height="506" viewBox="0 0 364 506" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- <svg width="484" height="506" viewBox="-10 -10 504 526" fill="none" xmlns="http://www.w3.org/2000/svg">
 	<defs>
 		<filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
 			<feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#222" flood-opacity="0.1" />
 		</filter>
 		<pattern id="black" x="0" y="0" width="1" height="1">
 			<rect width="315" height="315" fill="#222" />
-			<image opacity="0" width="315" height="315" xlink:href="https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"/>
+			<image opacity="0.75" width="315" height="315" xlink:href="https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"/>
 		</pattern>
 		<pattern id="gray" x="0" y="0" width="1" height="1">
 			<rect width="315" height="315" fill="#3D5769" />
-			<image opacity="0" width="315" height="315" xlink:href="https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"/>
+			<image opacity="0.75" width="315" height="315" xlink:href="https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"/>
 		</pattern>
 		<pattern id="blue" x="0" y="0" width="1" height="1">
 			<rect width="315" height="315" fill="#4599D7" />
-			<image opacity="0" width="315" height="315" xlink:href="https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"/>
+			<image opacity="0.75" width="315" height="315" xlink:href="https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"/>
+		</pattern>
+		<pattern id="green" x="0" y="0" width="1" height="1">
+			<rect width="315" height="315" fill="#43A047" />
+			<image opacity="0.75" width="315" height="315" xlink:href="https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"/>
+		</pattern>
+		<pattern id="teal" x="0" y="0" width="1" height="1">
+			<rect width="315" height="315" fill="#009688" />
+			<image opacity="0.75" width="315" height="315" xlink:href="https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"/>
 		</pattern>
 	</defs>
 	<g class="grid">
-		<g class="hex" fill="url(#black)" filter="url(#shadow)" transform="translate(0,0)">
+		<g class="hex" transform="translate(0,0)">
 			<path d="M105 0H35L0 61L35 122H105L140 61L105 0Z" />
 		</g>
-		<g class="hex" fill="url(#gray)" filter="url(#shadow)" transform="translate(111, 64)"> <!-- 105, 61 (x+6, y+3) !-->
+		<g class="hex" transform="translate(111, 64)"> <!-- 105, 61 (x+6, y+3) !-->
 			<path d="M105 0H35L0 61L35 122H105L140 61L105 0Z" />
 		</g>
-		<g class="hex" fill="url(#gray)" filter="url(#shadow)" transform="translate(0, 128)"> <!-- y+6 !-->
+		<g class="hex" transform="translate(0, 128)"> <!-- y+6 !-->
 			<path d="M105 0H35L0 61L35 122H105L140 61L105 0Z" />
 		</g>
-		<g class="hex" fill="url(#blue)" filter="url(#shadow)" transform="translate(111, 192)"> <!-- x+4, y+2 !-->
+		<g class="hex" transform="translate(111, 192)"> <!-- x+4, y+2 !-->
 			<path d="M105 0H35L0 61L35 122H105L140 61L105 0Z" />
 		</g>
-		<g class="hex" fill="url(#blue)" filter="url(#shadow)" transform="translate(0, 256)">
+		<g class="hex" transform="translate(0, 256)">
 			<path d="M105 0H35L0 61L35 122H105L140 61L105 0Z" />
 		</g>
-		<g class="hex" fill="url(#blue)" filter="url(#shadow)" transform="translate(222, 256)">
+		<g class="hex" transform="translate(222, 256)">
 			<path d="M105 0H35L0 61L35 122H105L140 61L105 0Z" />
 		</g>
-		<g class="hex" fill="url(#black)" filter="url(#shadow)" transform="translate(222, 384)">
+		<g class="hex" transform="translate(222, 384)">
 			<path d="M105 0H35L0 61L35 122H105L140 61L105 0Z" />
 		</g>
 	</g>
-</svg>
+</svg> -->
