@@ -1,12 +1,5 @@
-@keyframes heroImageAnimation {
-    0%, 20% {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+html.sr .app-hero .col > * {
+    visibility: hidden; // animated by scroll reveal
 }
 
 .app-hero {
@@ -26,9 +19,6 @@
     .btn {
         margin-top: 0.625rem;
         margin-right: 1rem;
-    }
-    img {
-        animation: heroImageAnimation 1200ms ease;
     }
 }
 
@@ -135,7 +125,7 @@
     &::after {
         content: "";
         display: block;
-        margin-top: 1.5rem;
+        margin-top: 2rem;
         width: 3rem;
         height: 3px;
         background-color: $color-primary;
@@ -207,12 +197,15 @@
         }
     }
 }
-.home-review {
+
+.home-reviews {
+    max-width: 520px;
     margin: 0 auto;
-    padding-top: 0.5rem;
-    max-width: 500px;
+}
+.home-review {
     text-align: center;
     letter-spacing: 0.25px;
+    outline: 0;
 
     p {
         color: #4B4B4B;
@@ -223,6 +216,7 @@
         margin-bottom: 0.5rem;
     }
 }
+
 
 .honeycombs {
     margin-top: 4rem;

@@ -13,12 +13,15 @@ get_header();
                 <p class="lead">
                     Een product waar design en functionaliteit elkaar tegenkomen. Zorg voor een prachtige akoestiek met geluiddempende honeycombs en een schitterend design.
                 </p>
-                <a href="product/honeycomb" class="btn btn--primary">Direct bestellen</a>
-                <a href="#" class="btn btn--base">Meer ontdekken</a>
+                <div class="actions">
+                    <a href="product/honeycomb" class="btn btn--primary">Direct bestellen</a>
+                    <a href="#" class="btn btn--base">Meer ontdekken</a>
+                </div>
             </div>
             <div class="col col--lg-6 text-center">
                 <img width="313" height="auto" src="<?php echo asset('honeycomb-2.png') ?>" alt="Honeycomb">
             </div>
+            </>
     </div>
 </section>
 
@@ -132,105 +135,91 @@ get_header();
     </div>
 </section>
 
-<section class="app-section app-section--gray app-section--compact text-center" data-scroll>
+<section class="app-section app-section--gray app-section--compact text-center">
     <div class="container">
+
+        <?php
+        $review = new WP_Query([
+            'post_type' => 'review',
+            'post_limits' => 1,
+            'posts_per_page' => 1,
+            'orderby' => 'rand',
+            'order' => 'DESC'
+        ]);
+        ?>
+
         <h2 class="app-block-title app-block-title--center">
             Klantervaring
         </h2>
-        <div class="home-review">
-            <strong>Jason Koolman</strong>
-            <p>Snelle levering, gemakkelijk te bevestigen en een genot voor het oog. Al met al erg tevreden met dit product!</p>
-            <div class="rating">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.1199 2.6392C7.39692 1.78693 8.60308 1.78693 8.8801 2.6392L9.66211 5.04512C9.78599 5.42627 10.1413 5.68432 10.5422 5.68432H13.0728C13.9693 5.68432 14.342 6.83104 13.6168 7.35778L11.5694 8.84471C11.2451 9.08028 11.1094 9.49782 11.2333 9.87897L12.0153 12.2849C12.2923 13.1372 11.3165 13.8459 10.5913 13.3191L8.54393 11.8322C8.21959 11.5966 7.78041 11.5966 7.45607 11.8322L5.40875 13.3191C4.68351 13.8459 3.7077 13.1372 3.98472 12.2849L4.76672 9.87897C4.89061 9.49782 4.75489 9.08028 4.43055 8.84471L2.38323 7.35778C1.65799 6.83105 2.03072 5.68432 2.92717 5.68432H5.45779C5.8587 5.68432 6.21401 5.42627 6.33789 5.04512L7.1199 2.6392Z" fill="#FFB401"/>
-                </svg>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.1199 2.6392C7.39692 1.78693 8.60308 1.78693 8.8801 2.6392L9.66211 5.04512C9.78599 5.42627 10.1413 5.68432 10.5422 5.68432H13.0728C13.9693 5.68432 14.342 6.83104 13.6168 7.35778L11.5694 8.84471C11.2451 9.08028 11.1094 9.49782 11.2333 9.87897L12.0153 12.2849C12.2923 13.1372 11.3165 13.8459 10.5913 13.3191L8.54393 11.8322C8.21959 11.5966 7.78041 11.5966 7.45607 11.8322L5.40875 13.3191C4.68351 13.8459 3.7077 13.1372 3.98472 12.2849L4.76672 9.87897C4.89061 9.49782 4.75489 9.08028 4.43055 8.84471L2.38323 7.35778C1.65799 6.83105 2.03072 5.68432 2.92717 5.68432H5.45779C5.8587 5.68432 6.21401 5.42627 6.33789 5.04512L7.1199 2.6392Z" fill="#FFB401"/>
-                </svg>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.1199 2.6392C7.39692 1.78693 8.60308 1.78693 8.8801 2.6392L9.66211 5.04512C9.78599 5.42627 10.1413 5.68432 10.5422 5.68432H13.0728C13.9693 5.68432 14.342 6.83104 13.6168 7.35778L11.5694 8.84471C11.2451 9.08028 11.1094 9.49782 11.2333 9.87897L12.0153 12.2849C12.2923 13.1372 11.3165 13.8459 10.5913 13.3191L8.54393 11.8322C8.21959 11.5966 7.78041 11.5966 7.45607 11.8322L5.40875 13.3191C4.68351 13.8459 3.7077 13.1372 3.98472 12.2849L4.76672 9.87897C4.89061 9.49782 4.75489 9.08028 4.43055 8.84471L2.38323 7.35778C1.65799 6.83105 2.03072 5.68432 2.92717 5.68432H5.45779C5.8587 5.68432 6.21401 5.42627 6.33789 5.04512L7.1199 2.6392Z" fill="#FFB401"/>
-                </svg>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.1199 2.6392C7.39692 1.78693 8.60308 1.78693 8.8801 2.6392L9.66211 5.04512C9.78599 5.42627 10.1413 5.68432 10.5422 5.68432H13.0728C13.9693 5.68432 14.342 6.83104 13.6168 7.35778L11.5694 8.84471C11.2451 9.08028 11.1094 9.49782 11.2333 9.87897L12.0153 12.2849C12.2923 13.1372 11.3165 13.8459 10.5913 13.3191L8.54393 11.8322C8.21959 11.5966 7.78041 11.5966 7.45607 11.8322L5.40875 13.3191C4.68351 13.8459 3.7077 13.1372 3.98472 12.2849L4.76672 9.87897C4.89061 9.49782 4.75489 9.08028 4.43055 8.84471L2.38323 7.35778C1.65799 6.83105 2.03072 5.68432 2.92717 5.68432H5.45779C5.8587 5.68432 6.21401 5.42627 6.33789 5.04512L7.1199 2.6392Z" fill="#FFB401"/>
-                </svg>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.1199 2.6392C7.39692 1.78693 8.60308 1.78693 8.8801 2.6392L9.66211 5.04512C9.78599 5.42627 10.1413 5.68432 10.5422 5.68432H13.0728C13.9693 5.68432 14.342 6.83104 13.6168 7.35778L11.5694 8.84471C11.2451 9.08028 11.1094 9.49782 11.2333 9.87897L12.0153 12.2849C12.2923 13.1372 11.3165 13.8459 10.5913 13.3191L8.54393 11.8322C8.21959 11.5966 7.78041 11.5966 7.45607 11.8322L5.40875 13.3191C4.68351 13.8459 3.7077 13.1372 3.98472 12.2849L4.76672 9.87897C4.89061 9.49782 4.75489 9.08028 4.43055 8.84471L2.38323 7.35778C1.65799 6.83105 2.03072 5.68432 2.92717 5.68432H5.45779C5.8587 5.68432 6.21401 5.42627 6.33789 5.04512L7.1199 2.6392Z" fill="#FFB401"/>
-                </svg>
-            </div>
+
+        <div class="home-reviews">
+            <?php while ( $review->have_posts() ) : $review->the_post(); $fields = get_fields($post->ID); ?>
+
+                <div class="home-review">
+                    <strong><?php the_title() ?></strong>
+                    <p><?php echo get_the_excerpt() ?> <span class="author">- <?php echo $fields['author'] ?></span></p>
+                    <div class="rating">
+                        <?php for ($i = 0; $i < floatval($fields['rating']); $i++): ?>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.1199 2.6392C7.39692 1.78693 8.60308 1.78693 8.8801 2.6392L9.66211 5.04512C9.78599 5.42627 10.1413 5.68432 10.5422 5.68432H13.0728C13.9693 5.68432 14.342 6.83104 13.6168 7.35778L11.5694 8.84471C11.2451 9.08028 11.1094 9.49782 11.2333 9.87897L12.0153 12.2849C12.2923 13.1372 11.3165 13.8459 10.5913 13.3191L8.54393 11.8322C8.21959 11.5966 7.78041 11.5966 7.45607 11.8322L5.40875 13.3191C4.68351 13.8459 3.7077 13.1372 3.98472 12.2849L4.76672 9.87897C4.89061 9.49782 4.75489 9.08028 4.43055 8.84471L2.38323 7.35778C1.65799 6.83105 2.03072 5.68432 2.92717 5.68432H5.45779C5.8587 5.68432 6.21401 5.42627 6.33789 5.04512L7.1199 2.6392Z" fill="#FFB401"/>
+                            </svg>
+                        <?php endfor; ?>
+                    </div>
+                </div>
+
+            <?php endwhile; wp_reset_query(); ?>
         </div>
+
         <a class="btn btn--link mt-4">
             Meer ervaringen
         </a>
     </div>
 </section>
 
+<section class="app-section" style="border-bottom: 1px solid #EEE;">
+    <div class="container">
+        <div class="row">
+            <div class="col col--md-4">banner 1</div>
+            <div class="col col--md-4">banner 2</div>
+            <div class="col col--md-4">banner 3</div>
+        </div>
+    </div>
+</section>
+
 <section class="app-section">
     <div class="container">
+
+        <?php
+        $faq = new WP_Query([
+            'post_type' => 'faq',
+            'post_limits' => 5,
+            'posts_per_page' => 5
+        ]);
+        ?>
+
         <h2 class="app-block-title">
             Veelgestelde vragen
         </h2>
+
         <div class="accordion">
-            <div class="accordion-item">
-                <h3 class="accordion-title">
-                    <svg class="svg" width="19" height="19" viewBox="0 0 19 19" aria-hidden="true">
-                        <path class="minus" d="M8 8C5.2 8 2.6 8 0 8c0 1 0 2 0 3 2.5 0 4.9 0 8 0 2.8 0 8.4 0 11 0 0-1 0-2 0-3C16.5 8 11.1 8 8 8z"></path>
-                        <path class="plus" d="M11 19c-1 0-2 0-3 0 0-2.6 0-5.2 0-8 -3.1 0-5.5 0-8 0 0-1 0-2 0-3 2.6 0 5.2 0 8 0 0-3.1 0-5.5 0-8 1 0 2 0 3 0 0 2.6 0 5.2 0 8 3.1 0 5.5 0 8 0 0 1 0 2 0 3 -2.6 0-5.2 0-8 0C11 14.1 11 16.5 11 19z"></path>
-                    </svg>
-                     Hoe bevestig ik mijn honeycombs?
-                </h3>
-                <div class="accordion-content">
-                    <p>Content</p>
+            <?php while ( $faq->have_posts() ) : $faq->the_post(); ?>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-title">
+                        <svg class="svg" width="19" height="19" viewBox="0 0 19 19" aria-hidden="true">
+                            <path class="minus" d="M8 8C5.2 8 2.6 8 0 8c0 1 0 2 0 3 2.5 0 4.9 0 8 0 2.8 0 8.4 0 11 0 0-1 0-2 0-3C16.5 8 11.1 8 8 8z"></path>
+                            <path class="plus" d="M11 19c-1 0-2 0-3 0 0-2.6 0-5.2 0-8 -3.1 0-5.5 0-8 0 0-1 0-2 0-3 2.6 0 5.2 0 8 0 0-3.1 0-5.5 0-8 1 0 2 0 3 0 0 2.6 0 5.2 0 8 3.1 0 5.5 0 8 0 0 1 0 2 0 3 -2.6 0-5.2 0-8 0C11 14.1 11 16.5 11 19z"></path>
+                        </svg>
+                        <?php the_title(); ?>
+                    </h3>
+                    <div class="accordion-content">
+                        <?php the_content(); ?>
+                    </div>
                 </div>
-            </div>
-            <div class="accordion-item">
-                <h3 class="accordion-title">
-                    <svg class="svg" width="19" height="19" viewBox="0 0 19 19" aria-hidden="true">
-                        <path class="minus" d="M8 8C5.2 8 2.6 8 0 8c0 1 0 2 0 3 2.5 0 4.9 0 8 0 2.8 0 8.4 0 11 0 0-1 0-2 0-3C16.5 8 11.1 8 8 8z"></path>
-                        <path class="plus" d="M11 19c-1 0-2 0-3 0 0-2.6 0-5.2 0-8 -3.1 0-5.5 0-8 0 0-1 0-2 0-3 2.6 0 5.2 0 8 0 0-3.1 0-5.5 0-8 1 0 2 0 3 0 0 2.6 0 5.2 0 8 3.1 0 5.5 0 8 0 0 1 0 2 0 3 -2.6 0-5.2 0-8 0C11 14.1 11 16.5 11 19z"></path>
-                    </svg>
-                    Waar plaats ik mijn honeycombs?
-                </h3>
-                <div class="accordion-content">
-                    <p>Content</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h3 class="accordion-title">
-                    <svg class="svg" width="19" height="19" viewBox="0 0 19 19" aria-hidden="true">
-                        <path class="minus" d="M8 8C5.2 8 2.6 8 0 8c0 1 0 2 0 3 2.5 0 4.9 0 8 0 2.8 0 8.4 0 11 0 0-1 0-2 0-3C16.5 8 11.1 8 8 8z"></path>
-                        <path class="plus" d="M11 19c-1 0-2 0-3 0 0-2.6 0-5.2 0-8 -3.1 0-5.5 0-8 0 0-1 0-2 0-3 2.6 0 5.2 0 8 0 0-3.1 0-5.5 0-8 1 0 2 0 3 0 0 2.6 0 5.2 0 8 3.1 0 5.5 0 8 0 0 1 0 2 0 3 -2.6 0-5.2 0-8 0C11 14.1 11 16.5 11 19z"></path>
-                    </svg>
-                    Is mijn honeycomb veilig voor kinderen?
-                </h3>
-                <div class="accordion-content">
-                    <p>Content</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h3 class="accordion-title">
-                    <svg class="svg" width="19" height="19" viewBox="0 0 19 19" aria-hidden="true">
-                        <path class="minus" d="M8 8C5.2 8 2.6 8 0 8c0 1 0 2 0 3 2.5 0 4.9 0 8 0 2.8 0 8.4 0 11 0 0-1 0-2 0-3C16.5 8 11.1 8 8 8z"></path>
-                        <path class="plus" d="M11 19c-1 0-2 0-3 0 0-2.6 0-5.2 0-8 -3.1 0-5.5 0-8 0 0-1 0-2 0-3 2.6 0 5.2 0 8 0 0-3.1 0-5.5 0-8 1 0 2 0 3 0 0 2.6 0 5.2 0 8 3.1 0 5.5 0 8 0 0 1 0 2 0 3 -2.6 0-5.2 0-8 0C11 14.1 11 16.5 11 19z"></path>
-                    </svg>
-                    Hoeveel honeycombs heb ik nodig
-                </h3>
-                <div class="accordion-content">
-                    <p>Content</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h3 class="accordion-title">
-                    <svg class="svg" width="19" height="19" viewBox="0 0 19 19" aria-hidden="true">
-                        <path class="minus" d="M8 8C5.2 8 2.6 8 0 8c0 1 0 2 0 3 2.5 0 4.9 0 8 0 2.8 0 8.4 0 11 0 0-1 0-2 0-3C16.5 8 11.1 8 8 8z"></path>
-                        <path class="plus" d="M11 19c-1 0-2 0-3 0 0-2.6 0-5.2 0-8 -3.1 0-5.5 0-8 0 0-1 0-2 0-3 2.6 0 5.2 0 8 0 0-3.1 0-5.5 0-8 1 0 2 0 3 0 0 2.6 0 5.2 0 8 3.1 0 5.5 0 8 0 0 1 0 2 0 3 -2.6 0-5.2 0-8 0C11 14.1 11 16.5 11 19z"></path>
-                    </svg>
-                    Hoe lang duurt de levering?
-                </h3>
-                <div class="accordion-content">
-                    <p>Content</p>
-                </div>
-            </div>
+
+            <?php endwhile; wp_reset_query(); ?>
         </div>
+
         <a class="btn btn--link mt-4">
             Meer antwoorden
         </a>
