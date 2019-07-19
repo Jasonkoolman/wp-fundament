@@ -39,6 +39,14 @@ function close_div() {
     echo '</div>';
 }
 
+remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper', 10);
+add_action('woocommerce_before_main_content', function() {
+    echo '<div class="container">';
+});
+
+add_action('woocommerce_after_main_content', 'close_div');
+
 // Move coupon form below the checkout form
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 add_action( 'woocommerce_after_checkout_form', 'woocommerce_checkout_coupon_form', 5 );

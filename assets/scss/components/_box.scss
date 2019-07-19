@@ -1,0 +1,72 @@
+.box {
+    padding: 1.5rem;
+    overflow: hidden;
+    background-color: #f8F8f8;
+    height: 100%;
+
+    @include  breakpoint-up(sm) {
+        padding: 2.5rem;
+    }
+}
+.box--red {
+    position: relative;
+    background: radial-gradient(circle at 80% 60%, #a92f3b, #8c1925);
+    color: #FFF;
+}
+.box--primary {
+    position: relative;
+    background: radial-gradient(circle at 80% 60%, lighten($color-primary, 10%), $color-primary);
+    color: #FFF;
+}
+
+.box-label {
+    display: inline-block;
+    padding: .4735em .625em;
+    border-radius: 3px;
+    overflow: hidden;
+    font-size: .75em;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    line-height: 1;
+    vertical-align: middle;
+    color: #fff;
+    background-color: #222;
+}
+
+.box-body {
+    position: relative;
+    height: 100%;
+}
+
+.box-content {
+    max-width: 52%;
+}
+
+.box-img {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    max-height: calc(100% + 1.5rem);
+    max-width: 46%;
+    transform: translateY(-50%);
+}
+
+.box-cta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.box-subtitle {
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    opacity: 0.8;
+    margin-top: 2.5rem;
+    font-weight: 500;
+}
+
+.box-title {
+    margin-top: 1rem;
+    margin-bottom: 6rem;
+    font-weight: 400;
+}

@@ -67,8 +67,9 @@
     }
     .product-thumbnail img {
         display: block;
-        max-width: 80px;
+        max-width: 60px;
         height: auto;
+        padding: 0.25rem 0;
         border-radius: $border-radius-base;
     }
 

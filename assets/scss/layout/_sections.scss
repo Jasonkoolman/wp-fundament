@@ -56,47 +56,72 @@ html.sr .app-hero .col > * {
     }
     .container {
         display: flex;
-        height: 600px;
+        height: 400px;
         align-items: center;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+
     }
-    &:after {
+    &::after {
         content: "";
         display: block;
         position: absolute;
-        height: 120%;
-        top: -10%;
-        left: 50%;
-        width: 52px;
         background-color: inherit;
-        transform: translateX(-50%) skewX(-5deg);
+        height: 50px;
+        top: 48%;
+        left: 0;
+        width: 100%;
+        transform: skewY(-3deg);
+    }
+    @include breakpoint-up(md) {
+        .container {
+            height: 600px;
+        }
+        &::after {
+            height: 120%;
+            top: -10%;
+            left: 50%;
+            width: 52px;
+            transform: translateX(-50%) skewX(-5deg);
+        }
     }
 }
 .app-highlight-content {
-    max-width: 50%;
-    padding-right: 4rem;
-
     @include breakpoint-up(md) {
+        max-width: 50%;
+        padding-right: 4rem;
+    }
+    @include breakpoint-up(lg) {
         padding-right: 6rem;
     }
 }
 .app-highlight-media {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    top: 0;
-    left: 50%;
+    position: relative;
+    height: 420px;
     background: url('../img/banner-hero-sm.jpg') no-repeat center;
     background-size: cover;
+    overflow: hidden;
+
+    @include breakpoint-up(md) {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+    }
 }
 .app-highlight--reverse {
     background-color: $color-base;
 
-    .app-highlight-content {
-        margin-left: auto;
-        padding-right: 0;
-        padding-left: 4rem;
-
-        @include breakpoint-up(md) {
+    @include breakpoint-up(md) {
+        .app-highlight-content {
+            margin-left: auto;
+            padding-right: 0;
+            padding-left: 4rem;
+        }
+    }
+    @include breakpoint-up(lg) {
+        .app-highlight-content {
             padding-left: 6rem;
         }
     }
@@ -133,7 +158,7 @@ html.sr .app-hero .col > * {
 }
 .app-block-title--center {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 
     &::after {
         margin-left: auto;
@@ -144,6 +169,7 @@ html.sr .app-hero .col > * {
 .app-section {
     position: relative;
     padding: 8rem 0;
+    background-color: #FFF;
 }
 .app-section--gray {
     background-color: #F8F8F8;
@@ -172,6 +198,21 @@ html.sr .app-hero .col > * {
                 stroke-width: 1.5;
             }
         }
+
+        &:hover {
+            .hexagon {
+                stroke: $color-base;
+                fill: $color-base;
+            }
+            .icon {
+                &.fill {
+                    fill: #FFF;
+                }
+                &.stroke {
+                    stroke: #FFF;
+                }
+            }
+        }
     }
     h3 {
         font-weight: 500;
@@ -181,19 +222,35 @@ html.sr .app-hero .col > * {
         font-weight: 500;
         color: #4B4B4B;
     }
+}
 
-    &:hover {
-        .hexagon {
-            stroke: $color-base;
-            fill: $color-base;
+.woocommerce .quantity {
+    display: flex;
+
+    .quantity-down {
+        border-radius: $button-border-radius 0 0 $button-border-radius;
+    }
+    .quantity-up {
+        border-radius: 0 $button-border-radius $button-border-radius 0;
+    }
+    button {
+        border-color: $color-gray-light;
+    }
+    input {
+        flex: 1;
+        margin-left: -1px;
+        margin-right: -1px;
+        text-align: center;
+        appearance: textfield;
+        border-radius: 0;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
         }
-        .icon {
-            &.fill {
-                fill: #FFF;
-            }
-            &.stroke {
-                stroke: #FFF;
-            }
+
+        &:hover, &:focus {
+            z-index: 1;
         }
     }
 }
@@ -212,6 +269,7 @@ html.sr .app-hero .col > * {
     }
     strong {
         display: block;
+        font-size: 1.125rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
     }

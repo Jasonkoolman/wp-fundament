@@ -109,6 +109,9 @@
     margin-bottom: 2rem;
 }
 .woocommerce-checkout-review-order-table {
+    @extend .table--sm;
+    margin-bottom: 2rem;
+
     tr {
         border-bottom: 0;
     }
@@ -121,10 +124,14 @@
     thead {
         display: none;
     }
-    tfoot {
-        margin-top: 1rem;
-        padding-top: 1rem;
-        border-top: $table-border-width solid $table-border-color;
+    .cart_item:last-child td {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $color-gray-light;
+    }
+    .cart-subtotal {
+        td, th {
+            padding-top: 1rem;
+        }
     }
     .product-item-thumbnail {
         display: inline-block;

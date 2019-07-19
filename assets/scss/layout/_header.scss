@@ -1,10 +1,53 @@
+$header-height: 7rem;
+
 .site-header {
     background-color: $color-gray-lightest;
-    padding: 2.5rem 0;
+    transition: $transition-base;
 
     .container {
         display: flex;
         align-items: center;
+        height: $header-height;
+    }
+}
+
+// Sticky header
+.sh .site-body {
+    padding-top: $header-height;
+    background-color: $color-gray-lightest;
+}
+.sh .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    &.sticky {
+        position: fixed;
+        background: #FFF;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        z-index: 100;
+        animation: headerSlide 280ms ease;
+        transition: none;
+
+        .site-brand {
+            width: 32px;
+        }
+        .container {
+            height: 3.75rem;
+        }
+    }
+}
+.sh .admin-bar .site-header {
+    top: 32px;
+}
+
+@keyframes headerSlide {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
     }
 }
 
@@ -56,33 +99,38 @@
         position: relative;
         display: inline-block;
         vertical-align: middle;
-        margin-left: 1rem;
+        padding: 0.25rem;
+        margin-left: 0.75rem;
+        border-radius: 25px;
+        border: 1px solid transparent;
 
-        svg {
-            display: block;
-            fill: #666;
-            transition: $transition-base;
-
-            &:hover {
+        &:hover {
+            svg {
                 fill: $color-primary;
             }
         }
 
+        svg {
+            display: block;
+            fill: #4B4B4B;
+            transition: $transition-base;
+        }
+
         .bubble {
             position: absolute;
-            top: -10px;
-            right: -10px;
-            width: 18px;
-            height: 18px;
-            border-radius: 9px;
+            left: 100%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            padding: 0 5px;
+            height: 16px;
+            font-size: 11px;
+            font-weight: 700;
+            font-family: Arial;
             color: #FFF;
-            font-size: 10px;
-            font-family: $font-family-heading;
-            font-weight: 500;
             background-color: $color-primary;
+            border-radius: 10px;
             text-align: center;
-            line-height: 18px;
-            border: 1px solid #FFF;
+            line-height: 16px;
         }
     }
 }

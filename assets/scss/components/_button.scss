@@ -34,8 +34,20 @@
     &:active {
         background-color: transparent;
     }
+}
+
+.btn--next {
     &:after {
         content: "→";
+        display: inline-block;
+        margin-left: 0.25em;
+    }
+}
+.btn--prev {
+    &:before {
+        content: "←";
+        display: inline-block;
+        margin-right: 0.25em;
     }
 }
 

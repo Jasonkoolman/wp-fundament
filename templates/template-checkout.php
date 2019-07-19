@@ -9,7 +9,9 @@ get_header();
     background: #FFF;
     line-height: 48px;">
     <div class="container">
-        <a class="btn btn--link" href="">&larr; Terugkeren naar winkelmand</a>
+        <a class="btn btn--link btn--prev" href="<?php echo wc_get_cart_url(); ?>">
+            Terugkeren naar winkelmand
+        </a>
     </div>
 </div>
 

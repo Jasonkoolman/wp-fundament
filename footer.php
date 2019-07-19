@@ -8,7 +8,7 @@
 				<img src="<?php echo asset('logo-white.svg') ?>" width="40" alt="Deex Design">
 			</a>
 			<nav>
-				<?php nav('primary') ?>
+				<?php nav('footer') ?>
 			</nav>
         </div>
 	</footer>

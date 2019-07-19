@@ -6,7 +6,8 @@ const gulp       = require('gulp'),
       plumber    = require('gulp-plumber'),
       sass       = require('gulp-sass'),
       cleancss   = require('gulp-clean-css'),
-      imagemin   = require('gulp-imagemin');
+      imagemin   = require('gulp-imagemin'),
+      babel      = require('gulp-babel');
 
 /**
  * Base paths
@@ -34,6 +35,9 @@ function js() {
     return gulp.src(Paths.js.src)
         .pipe(plumber())
         .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(concat('app.min.js'))
         .pipe(uglify())
         .pipe(sourcemaps.write('.'))
