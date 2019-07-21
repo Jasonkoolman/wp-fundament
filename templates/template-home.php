@@ -255,21 +255,6 @@ get_header();
     </div>
 </section>
 
-<section class="app-section">
-
-    <div class="container">
-        <svg id="configurator" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <pattern id="fabric" x="0" y="0" width="1" height="1">
-                    <image opacity="0.25" width="315" height="315" xlink:href="https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"/>
-                </pattern>
-            </defs>
-        </svg>
-    </div>
-
-</section>
-
-
 <section class="app-section app-section--gray app-section--compact text-center">
     <div class="container">
 

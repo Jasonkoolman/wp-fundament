@@ -11,6 +11,7 @@ add_action('wp_enqueue_scripts', function() {
     wp_enqueue_script('app', asset('app.min.js', 'js', true), ['jquery'], null, true);
 
     wp_enqueue_script('scroll-reveal', asset('scroll-reveal.min.js', 'js', true), [], null, false);
+    wp_enqueue_script('tilt', asset('tilt.jquery.min.js', 'js', true), ['jquery'], null, false);
 });
 
 /**

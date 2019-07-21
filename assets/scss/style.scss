@@ -48,12 +48,62 @@
     }
 }
 
-#configurator {
-    display: block;
-    max-width: 100%;
-    height: auto;
+#designer {
+    background-color: #F0F0F0;
 
-    .hex {
+    .tile-grid {
+        //display: block;
+        //max-width: 720px;
+        //height: auto;
+        //margin: 0 auto;
+    }
+
+    .tile-config {
+        position: absolute;
+        display: none;
+        padding: 1rem;
+        background-color: #FFF;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        z-index: 1;
+    }
+
+    .tiles {
+        transition: transform 0.3s ease;
+    }
+    .tiles--relaxed {
+        transform: scale(1.1);
+
+        .tile {
+            transform: scale(0.9);
+        }
+    }
+
+    .tile {
+        cursor: pointer;
         animation: pulse 300ms ease-in-out;
+        transition: transform 0.3s ease;
+
+        &:hover .tile-shape {
+            opacity: 0.9;
+        }
+
+        &.tile--fill {
+            .tile-img {
+                display: block;
+                fill: url('#fabric');
+            }
+        }
+        &.tile--clear {
+            .tile-shape {
+                stroke: #BBB;
+                fill: transparent;
+            }
+        }
+    }
+    .tile-img {
+        display: none;
+    }
+    .tile-shape {
+        stroke-opacity: 0.5;
     }
 }
