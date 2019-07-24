@@ -52,10 +52,10 @@
     background-color: #F0F0F0;
 
     .tile-grid {
-        //display: block;
-        //max-width: 720px;
-        //height: auto;
-        //margin: 0 auto;
+        display: block;
+        max-width: 720px;
+        height: auto;
+        margin: 0 auto;
     }
 
     .tile-config {
@@ -90,7 +90,10 @@
         &.tile--fill {
             .tile-img {
                 display: block;
-                fill: url('#fabric');
+                fill: url(#fabric);
+            }
+            .tile-shape {
+                //filter: url(#bevel);
             }
         }
         &.tile--clear {

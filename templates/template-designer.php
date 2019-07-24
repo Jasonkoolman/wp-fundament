@@ -40,9 +40,27 @@ $colors = array_map(function($term) {
             <pattern id="fabric" x="0" y="0" width="1" height="1">
                 <image opacity="0.4" width="250" height="250" xlink:href="https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"/>
             </pattern>
+            <filter id="bevel" filterUnits="objectBoundingBox" x="-10%" y="-10%" width="150%" height="150%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="0.5" result="blur"/>
+                <feSpecularLighting in="blur" surfaceScale="5" specularConstant="0.5" specularExponent="10" result="specOut" lighting-color="#FFF">
+                  <fePointLight x="-5000" y="-10000" z="0000"/>
+                </feSpecularLighting>
+                <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut2"/>
+                <feComposite in="SourceGraphic" in2="specOut2" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint" />
+            </filter>
+            <!--<filter id="bevel" filterUnits="objectBoundingBox" x="-10%" y="-10%" width="150%" height="150%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="0.5" result="blur"/>
+                <feSpecularLighting in="blur" surfaceScale="5" specularConstant="0.5" specularExponent="10" result="specOut" lighting-color="#FFF">
+                  <fePointLight x="-5000" y="-10000" z="0000"/>
+                </feSpecularLighting>
+                <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut2"/>
+                <feComposite in="SourceGraphic" in2="specOut2" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint" />
+            </filter>!-->
         </defs>
+
         <g class="tiles"></g>
     </svg>
+
 
     <form class="designer-form">
         <div class="form-group">

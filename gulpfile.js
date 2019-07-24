@@ -7,14 +7,17 @@ const gulp       = require('gulp'),
       sass       = require('gulp-sass'),
       cleancss   = require('gulp-clean-css'),
       imagemin   = require('gulp-imagemin'),
-      babel      = require('gulp-babel');
+      babelify   = require('babelify'),
+      browserify = require('browserify'),
+      source     = require('vinyl-source-stream'),
+      buffer     = require('vinyl-buffer');
 
 /**
  * Base paths
  */
 const Paths = {
     js : {
-        src  : 'assets/js/src/*.js',
+        src  : 'assets/js/src/index.js',
         dist : 'assets/js'
     },
     sass : {
@@ -32,16 +35,32 @@ const Paths = {
  * Task definitions
  */
 function js() {
-    return gulp.src(Paths.js.src)
-        .pipe(plumber())
+    const bundler = browserify({
+        entries: [Paths.js.src],
+        debug: true,
+    }).transform(babelify, {
+        presets: ["@babel/preset-env"]
+    });
+
+    // Browserify requires being wrapped to work with gulp.
+    return bundler.bundle()
+        .pipe(source('app.min.js'))
+        .pipe(buffer())
         .pipe(sourcemaps.init())
-        .pipe(babel({
-            presets: ['@babel/env']
-        }))
-        .pipe(concat('app.min.js'))
         .pipe(uglify())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(Paths.js.dist));
+
+    // return gulp.src(Paths.js.src)
+    //     .pipe(plumber())
+    //     .pipe(sourcemaps.init())
+    //     .pipe(babel({
+    //         presets: ['@babel/env']
+    //     }))
+    //     .pipe(concat('app.min.js'))
+    //     .pipe(uglify())
+    //     .pipe(sourcemaps.write('.'))
+    //     .pipe(gulp.dest(Paths.js.dist));
 }
 
 function css() {
