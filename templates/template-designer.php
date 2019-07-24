@@ -18,10 +18,6 @@ $colors = array_map(function($term) {
 }, $color_terms);
 ?>
 
-<header class="page-header">
-    <h1 class="page-title"><?php the_title() ?></h1>
-</header>
-
 <section class="app-section" id="designer" data-colors="<?php echo htmlspecialchars(json_encode($colors), ENT_QUOTES, 'UTF-8') ?>">
 
     <div class="tile-config">

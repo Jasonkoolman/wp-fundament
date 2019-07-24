@@ -35,6 +35,22 @@ Hex.neighbor = function(hex, dir) {
 };
 
 /**
+ * Get all neighboring hexes.
+ *
+ * @param {Hex} hex
+ * @returns {Hex[]}
+ */
+Hex.neighbors = function(hex) {
+    const neighbors = [];
+
+    for (let i = 0; i < 6; i++) {
+        neighbors.push(Hex.neighbor(hex, i));
+    }
+
+    return neighbors;
+};
+
+/**
  * Round to the nearest hex position.
  *
  * @param {Hex} hex

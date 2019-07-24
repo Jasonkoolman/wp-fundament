@@ -1,3 +1,5 @@
+import Hex from '../geometry/Hex';
+
 export default class Tile {
 
     constructor(hex, grid) {
@@ -14,12 +16,27 @@ export default class Tile {
         const elem = Tile.createElement();
         this.update();
         this.element = this.grid.svg.getElementsByClassName('tiles')[0].appendChild(elem);
-        this.element.addEventListener('click', this.onClick.bind(this));
+        this.listeners = {
+            'click': this.onClick.bind(this)
+        };
+
+        Object.keys(this.listeners).forEach(key => {
+            this.element.addEventListener(key, this.listeners[key]);
+        });
     }
 
     update() {
         this.center = this.grid.hexToPixel(this.hex);
         this.points = this.grid.hexCorners(this.hex);
+    }
+
+    destroy() {
+        Object.keys(this.listeners).forEach(key => {
+            this.element.removeEventListener(key, this.listeners[key]);
+        });
+
+        this.element.parentNode.removeChild(this.element);
+        this.element = null;
     }
 
     draw() {
@@ -44,22 +61,39 @@ export default class Tile {
         $elem.removeClass('tile--fill');
         $elem.addClass('tile--clear');
         this.color = null;
+        this.getTrailingNeighbors().forEach(t => {
+            const index = this.grid.getTileIndex(t);
+            this.grid.tiles.splice(index, 1);
+            t.destroy();
+        });
+        this.grid.touch();
+    }
+
+    getTrailingNeighbors() {
+        const trailing = [];
+        const neighbors = this.grid.getTiles(
+            Hex.neighbors(this.hex)
+        ).filter(t => !t.color);
+
+        neighbors.forEach(tile => {
+            // get the second row of empty neighbors
+            const secondNeighbors = this.grid.getTiles(
+                Hex.neighbors(tile.hex)
+            );
+
+            const hasActiveNeighbor = secondNeighbors.some(t => t.color);
+
+            if (!hasActiveNeighbor) {
+                console.log('has no active', tile);
+                trailing.push(tile)
+            }
+        });
+
+        return trailing;
     }
 
     onClick(event) {
-        if (this.color) {
-            $config.css({
-                top: `${this.center.y}px`,
-                left: `${this.center.x}px`
-            }).fadeIn();
-        } else {
-            this.fill('#222');
-            for (let i = 0; i < 6; i++) {
-                this.grid.drawNeighbors(this);
-            }
-        }
-
-        this.grid.touch();
+        this.grid.selectTile(this);
     }
 
 }

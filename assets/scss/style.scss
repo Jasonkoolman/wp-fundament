@@ -49,6 +49,7 @@
 }
 
 #designer {
+    min-height: calc(100vh - 7rem);
     background-color: #F0F0F0;
 
     .tile-grid {

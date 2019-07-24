@@ -10,14 +10,16 @@ import Orientation from '../geometry/Orientation';
  */
 export default class Grid {
 
-    constructor(svgRootElement, width, size) {
-        this.svg = svgRootElement;
+    constructor(rootElement, width, size) {
+        this.svg = rootElement.querySelector('svg');
         this.tiles = [];
         this.size = size;
         this.viewport = {x1: 0, y1: 0, x2: width, y2: width};
         this.width = width;
         this.origin = new Point(this.width / 2, this.width / 2);
         this.orientation = Orientation.pointy;
+        this.activeTile = null;
+        this.$config = $(rootElement).find('.tile-config');
     }
 
     addTile(tile) {
@@ -83,11 +85,33 @@ export default class Grid {
         }
     }
 
-    hasTile(hex) {
-        return this.tiles.some(function (t) {
+    getTile(hex) {
+        return this.tiles.find(function (t) {
             return t.hex.q === hex.q
                 && t.hex.r === hex.r;
         });
+    }
+
+    getTileIndex(tile) {
+        return this.tiles.findIndex(function (t) {
+            return t.hex.q === tile.hex.q
+                && t.hex.r === tile.hex.r;
+        });
+    }
+
+    getTiles(hexes) {
+        return this.tiles.map(t => {
+            const hex = hexes.find(h => {
+                return t.hex.q === h.q
+                    && t.hex.r === h.r;
+            });
+
+            return hex ? t : null;
+        }).filter(Boolean);
+    }
+
+    hasTile(hex) {
+        return this.getTile(hex) !== undefined;
     }
 
     hexToPixel(h) {
@@ -135,7 +159,7 @@ export default class Grid {
     }
 
     getBoundaries() {
-        let minX = 0, minY = 0, maxX = 0, maxY = 0;
+        let minX = 1000, minY = 1000, maxX = -1000, maxY = -1000;
 
         this.tiles.forEach(t => {
             const p = t.center;
@@ -171,6 +195,24 @@ export default class Grid {
             v,
             h
         };
+    }
+
+    selectTile(tile) {
+        this.activeTile = tile;
+
+        if (tile.color) {
+            this.$config.css({
+                top: `${tile.center.y}px`,
+                left: `${tile.center.x}px`
+            }).fadeIn();
+        } else {
+            tile.fill('#222');
+            for (let i = 0; i < 6; i++) {
+                this.drawNeighbors(tile);
+            }
+        }
+
+        this.touch();
     }
 
 }
