@@ -1,0 +1,117 @@
+.template-template-designer {
+    background-color: $color-gray-lightest;
+    transition: background-color 800ms ease;
+
+    &.soft-green {
+        background-color: #d4dbd4;
+    }
+    &.concrete {
+        background-color: #b1b9bb;
+    }
+    &.denim {
+        background-color: #7c8d95;
+    }
+    &.soft-pink {
+        background-color: #f2dfd9;
+    }
+    &.soft-blue {
+        background-color: #ced8da;
+    }
+}
+
+#designer {
+    position: relative;
+    background: linear-gradient(to left top, rgba(255,255,255,0), rgba(255,255,255,0.2));
+    min-height: calc(100vh - 7rem);
+
+    .designer-config {
+        position: absolute;
+        display: none;
+        padding: 1rem;
+        background-color: #FFF;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        z-index: 1;
+    }
+
+    .tile-grid {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 80%;
+        max-height: 80%;
+        height: auto;
+    }
+    .tiles {
+        transition: transform 0.3s ease;
+    }
+    .tiles--relaxed {
+        transform: scale(1.06);
+
+        .tile {
+            transform: scale(0.94);
+        }
+    }
+    .tiles--preview {
+        .tile--clear .tile-shape {
+            stroke: transparent!important;
+        }
+        .tile-icon {
+            display: none!important;
+        }
+    }
+
+    .tile {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+
+        &.tile--fill {
+            .tile-img {
+                display: block;
+                fill: url(#fabric);
+            }
+            .tile-add {
+                display: none;
+            }
+        }
+        &.tile--clear {
+            .tile-shape {
+                stroke: #CCC;
+                fill: transparent;
+            }
+        }
+
+        &:hover {
+            .tile-icon {
+                opacity: 1;
+                fill: $color-primary;
+            }
+
+            &.tile--fill {
+                .tile-edit {
+                    display: block;
+                }
+            }
+        }
+    }
+    .tile-img {
+        display: none;
+    }
+    .tile-shape {
+        stroke-opacity: 0.5;
+    }
+    .tile-edit {
+        display: none;
+        fill: #FFF;
+    }
+    .tile-add {
+        fill: #CCC;
+    }
+}
+
+.designer-settings {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

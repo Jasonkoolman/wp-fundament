@@ -50,6 +50,9 @@ get_header();
             <p class="lead">
                 Met de verschillende kleuren en de verrassende patronen maak je een eigen uniek design. De honeycomb past bij elk interieur door de simplistische stoffen, en creëert voor elke ruimte een heerlijke ambiance.
             </p>
+            <a class="btn btn--link btn--next">
+                Naar de designer
+            </a>
         </div>
     </div>
 </section>
@@ -68,6 +71,9 @@ get_header();
             <p class="lead">
                 Optimaliseer het geluid en houdt het lawaai binnen de ruimte. De honeycombs gaan echo in een kamer tegen, ze absorberen het geluid en zorgen voor een geweldige akoestiek.
             </p>
+            <a class="btn btn--link btn--next">
+                Meer over geluid
+            </a>
         </div>
     </div>
 </section>
@@ -260,7 +266,7 @@ get_header();
 
         <div class="services" style="display: flex;
         align-items: center;
-        justify-content: space-evenly;">
+        justify-content: space-around;">
 
             <svg xmlns="http://www.w3.org/2000/svg" width="60" viewBox="0 0 88.668 79.598">
                 <path d="M7.375 7.38v64.877h37.824c24.951 0 35.771-13.973 35.771-32.502 0-18.457-10.82-32.375-35.771-32.375H7.375z" fill="#fff"/><path d="M11.463 11.472h33.741c22.901 0 31.679 12.506 31.679 28.282 0 18.917-12.258 28.409-31.679 28.409H11.463V11.472zm3.271 3.271v50.151h30.47c18.396 0 28.405-8.572 28.405-25.14 0-17.027-10.85-25.012-28.405-25.012h-30.47z"/><path d="M18.822 43.442h9.754v17.36h-9.754z"/><circle cx="23.698" cy="34.695" r="6.062"/>

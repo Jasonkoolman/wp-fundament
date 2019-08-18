@@ -102,19 +102,19 @@ $z-dialog:   1000   !default;
 /*---------------------*
  * Input
  *---------------------*/
-$input-padding:       0.625rem 0.875rem   !default;
-$input-line-height:   1.25                  !default;
-$input-color:         $color-base           !default;
-$input-placeholder:   $color-gray           !default;
-$input-background:    #fff                  !default;
-$input-border-width:  1px                   !default;
-$input-border-color:  $color-gray-light     !default;
-$input-border-radius: $border-radius-base   !default;
-$input-transition:    $transition-base      !default;
+$input-padding:       0.625rem 0.875rem;
+$input-line-height:   1.25;
+$input-color:         $color-base;
+$input-placeholder:   $color-gray;
+$input-background:    #fff;
+$input-border-width:  1px;
+$input-border-color:  $color-gray-light;
+$input-border-radius: $border-radius-base;
+$input-transition:    $transition-base;
 
 // Sizes
-$input-padding-sm: 0.375rem 0.625rem   !default;
-$input-padding-lg: 0.75rem 1rem        !default;
+$input-padding-sm: 0.375rem 0.625rem;
+$input-padding-lg: 0.75rem 1rem;
 
 // States
 $input-hover-color:        $input-color                       !default;
@@ -151,7 +151,7 @@ $list-item-background:   transparent            !default;
  * Button
  *---------------------*/
 $button-padding:       0.625rem 1.25rem   !default;
-$button-line-height:   1.25                 !default;
+$button-line-height:   1.375                !default;
 $button-font-weight:   500                  !default;
 $button-color:         $color-base          !default;
 $button-background:    $color-gray-lighter  !default;

@@ -47,11 +47,19 @@ html.sr .app-hero .col > * {
     h2 {
         font-weight: 500;
         font-size: 1.5rem;
+        margin-bottom: 1rem;
 
         span {
             display: block;
             font-weight: 700;
             font-size: 2.5rem;
+        }
+    }
+    .btn {
+        color: rgba(255,255,255,0.6);
+
+        &:hover {
+            color: #FFF;
         }
     }
     .container {
@@ -224,37 +232,6 @@ html.sr .app-hero .col > * {
     }
 }
 
-.woocommerce .quantity {
-    display: flex;
-
-    .quantity-down {
-        border-radius: $button-border-radius 0 0 $button-border-radius;
-    }
-    .quantity-up {
-        border-radius: 0 $button-border-radius $button-border-radius 0;
-    }
-    button {
-        border-color: $color-gray-light;
-    }
-    input {
-        flex: 1;
-        margin-left: -1px;
-        margin-right: -1px;
-        text-align: center;
-        appearance: textfield;
-        border-radius: 0;
-
-        &::-webkit-inner-spin-button,
-        &::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-        }
-
-        &:hover, &:focus {
-            z-index: 1;
-        }
-    }
-}
-
 .home-reviews {
     max-width: 520px;
     margin: 0 auto;
@@ -272,113 +249,5 @@ html.sr .app-hero .col > * {
         font-size: 1.125rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
-    }
-}
-
-
-.honeycombs {
-    margin-top: 4rem;
-    margin-bottom: 20rem;
-    transform: rotate(30deg) scale(0.75);
-    animation: animateHoneycombs 2000ms ease-out;
-    transform-origin: center bottom;
-
-    @include breakpoint-up(md) {
-        margin-top: 4rem;
-        margin-bottom: 0;
-    }
-
-    .hex {
-        filter: url(#shadow);
-
-        path {
-            transition: all 400ms ease-out;
-
-            &:hover {
-                opacity: 0.75;
-            }
-        }
-    }
-
-    // .hex:nth-child(1) {
-    //     animation-delay: 0;
-    // }
-    // .hex:nth-child(2) {
-    //     animation-delay: 150ms;
-    // }
-    // .hex:nth-child(2) {
-    //     animation-delay: 300ms;
-    // }
-    // .hex:nth-child(3) {
-    //     animation-delay: 450ms;
-    // }
-    // .hex:nth-child(4) {
-    //     animation-delay: 600ms;
-    // }
-    // .hex:nth-child(5) {
-    //     animation-delay: 750ms;
-    // }
-    // .hex:nth-child(6) {
-    //     animation-delay: 900ms;
-    // }
-    // .hex:nth-child(7) {
-    //     animation-delay: 1050ms;
-    // }
-    // .hex:nth-child(8) {
-    //     animation-delay: 1200ms;
-    // }
-
-    // purple #800080
-
-    &.style-1 {
-        .hex:nth-child(1) {
-            fill: url(#green);
-            transition: filter 500ms ease;
-        }
-        .hex:nth-child(2) {
-            fill: url(#teal);
-        }
-        .hex:nth-child(3) {
-            fill: url(#gray);
-        }
-        .hex:nth-child(4) {
-            fill: url(#green);
-        }
-        .hex:nth-child(5) {
-            fill: url(#teal);
-        }
-        .hex:nth-child(6) {
-            fill: url(#gray);
-        }
-        .hex:nth-child(7) {
-            fill: url(#teal);
-        }
-    }
-
-    &.style-2 {
-        .hex path {
-            transform-origin: bottom;
-        }
-        .hex:nth-child(1) {
-            fill: url(#black);
-        }
-        .hex:nth-child(2) {
-            fill: url(#gray);
-        }
-        .hex:nth-child(3) {
-            fill: url(#gray);
-        }
-        .hex:nth-child(4) {
-            fill: url(#blue);
-        }
-        .hex:nth-child(5) {
-            fill: url(#blue);
-        }
-        .hex:nth-child(6) {
-            fill: url(#blue);
-        }
-        .hex:nth-child(7) {
-            fill: url(#black);
-        }
     }
 }

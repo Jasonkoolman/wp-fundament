@@ -24,7 +24,6 @@
     padding: 4rem 0;
 }
 
-
 @include breakpoint-up(lg) {
     .page-template-default {
         .page-wrap .container {
@@ -38,21 +37,5 @@
         .page-sidebar {
             width: 300px;
         }
-    }
-}
-
-
-// Homepage
-.feature {
-    img {
-        margin-bottom: 1.25rem;
-    }
-    h4 {
-        text-transform: none;
-        font-size: 1.25rem;
-    }
-    p {
-        line-height: 1.75;
-        color: #666;
     }
 }

@@ -29,7 +29,7 @@
         }
     }
     .variations {
-        margin-bottom: 0.75rem;
+        margin-bottom: 1.5rem;
 
         select {
             @extend .input;
@@ -53,15 +53,14 @@
     }
     .woocommerce-variation-add-to-cart {
         display: flex;
+        flex-wrap: wrap;
 
-        input {
-            width: 4.5rem;
-            font-size: 15px;
+        .quantity {
             margin-right: 0.75rem;
         }
-        button {
-            @extend .btn--primary;
-        }
+    }
+    .single_add_to_cart_button {
+        @extend .btn--primary;
     }
     .reset_variations {
         display: none!important;

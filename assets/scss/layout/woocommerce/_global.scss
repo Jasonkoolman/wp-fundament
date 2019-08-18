@@ -84,3 +84,40 @@
 .woocommerce-Price-currencySymbol {
     margin-right: 0.25em;
 }
+
+.woocommerce .quantity {
+    display: inline-flex;
+
+    .qty-down {
+        border-radius: $button-border-radius 0 0 $button-border-radius;
+    }
+    .qty-up {
+        border-radius: 0 $button-border-radius $button-border-radius 0;
+    }
+    button {
+        border-color: $color-gray-light;
+        background-color: #FFF;
+
+        &:focus,
+        &:hover {
+            border-color: $input-hover-border-color;
+        }
+    }
+    input {
+        width: 3.75rem;
+        margin-left: -1px;
+        margin-right: -1px;
+        text-align: center;
+        appearance: textfield;
+        border-radius: 0;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
+
+        &:hover, &:focus {
+            z-index: 1;
+        }
+    }
+}

@@ -17,8 +17,9 @@ const gulp       = require('gulp'),
  */
 const Paths = {
     js : {
-        src  : 'assets/js/src/index.js',
-        dist : 'assets/js'
+        src   : 'assets/js/src/index.js',
+        dist  : 'assets/js',
+        watch : 'assets/js/src/**/*.js'
     },
     sass : {
         src   : 'assets/scss/style.scss',
@@ -47,20 +48,9 @@ function js() {
         .pipe(source('app.min.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init())
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(Paths.js.dist));
-
-    // return gulp.src(Paths.js.src)
-    //     .pipe(plumber())
-    //     .pipe(sourcemaps.init())
-    //     .pipe(babel({
-    //         presets: ['@babel/env']
-    //     }))
-    //     .pipe(concat('app.min.js'))
-    //     .pipe(uglify())
-    //     .pipe(sourcemaps.write('.'))
-    //     .pipe(gulp.dest(Paths.js.dist));
 }
 
 function css() {
@@ -82,7 +72,7 @@ function img() {
 }
 
 function watch() {
-    gulp.watch(Paths.js.src, js);
+    gulp.watch(Paths.js.watch, js);
     gulp.watch(Paths.sass.watch, css);
     gulp.watch(Paths.img.src, img);
 }

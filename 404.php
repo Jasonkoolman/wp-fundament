@@ -1,15 +1,13 @@
 <?php get_header(); ?>
 
-    <div class="container">
+    <div class="page-wrap">
 
-        <div class="page-wrap">
+        <div class="container">
 
-            <header class="page-header">
-                <h1 class="page-title">404</h1>
-            </header>
+            <h1 class="page-title mb-4">404</h1>
 
-            <div class="page-content">
-                <p><?php _e('Page not found', 'fundament'); ?></p>
+            <div class="page-content text-center">
+                <p>Pagina niet gevonden</p>
             </div>
 
         </div>
